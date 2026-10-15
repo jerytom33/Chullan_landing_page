@@ -1,0 +1,1297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chullan | Professional Makeup for Indian Skin Tones</title>
+<link rel="canonical" href="https://chullancosmetics.com/">
+<meta name="description" content="Professional salon-grade base makeup formulated in the USA for Indian skin tones. 8 foundation shades, curated kits and a complete prep-to-set range.">
+<meta property="og:title" content="Chullan | Professional Makeup for Indian Skin Tones">
+<meta property="og:description" content="Professional salon-grade base makeup formulated in the USA for Indian skin tones. 8 foundation shades, curated kits and a complete prep-to-set range.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Jost:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap">
+<link rel="preload" as="image" href="img/hero-1600.webp" media="(min-width: 760px)">
+<link rel="preload" as="image" href="img/hero-900.webp" media="(max-width: 759px)">
+<style>
+/* Layout: "Backstage kit" v2 — black studio hero with live powder, then ink / stone
+   sections that walk the eight-step professional sequence, shade by shade. */
+:root{
+  --ink:#0e0d0c;
+  --ink-2:#191714;
+  --stone:#e8e6e2;
+  --paper:#f4f3f0;
+  --gold:#c9a77b;
+  --gold-hi:#e3c79f;
+  --gold-deep:#9a7448;
+  --mute-d:#a29c94;
+  --mute-l:#67625b;
+  --line-d:rgba(244,243,240,.14);
+  --line-l:rgba(14,13,12,.16);
+
+  --f-display:'Oswald','Arial Narrow','Helvetica Neue',sans-serif;
+  --f-body:'Cabin',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-logo:'Jost','Futura','Century Gothic',sans-serif;
+  --f-serif:'Instrument Serif','Times New Roman',serif;
+
+  --fs-hero:clamp(46px,6.4vw,124px);
+  --fs-h2:clamp(44px,7vw,112px);
+  --fs-h3:clamp(26px,2.8vw,42px);
+  --fs-lead:clamp(18px,1.45vw,21px);
+  --fs-body:clamp(15px,1.05vw,17px);
+  --fs-label:12px;
+
+  --gutter:clamp(16px,4vw,64px);
+  --max:1440px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --bar-h:34px;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--f-body);font-size:var(--fs-body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:600;text-transform:uppercase;line-height:.9;letter-spacing:-.005em;text-wrap:balance}
+p{margin:0}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.label{font-family:var(--f-logo);font-size:var(--fs-label);font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+.serif{font-family:var(--f-serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+.sec-dark{background:var(--ink);color:var(--paper)}
+.sec-light{background:var(--stone);color:var(--ink)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.price{font-family:var(--f-display);font-weight:500;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+
+/* ---------- Logo ---------- */
+.logo{display:inline-flex;flex-direction:column;align-items:center;gap:2px;padding:6px 10px 5px;position:relative;font-family:var(--f-logo);line-height:1;color:currentColor}
+.logo svg.frame{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.logo svg.frame rect{fill:none;stroke:currentColor;stroke-width:1.2;stroke-dasharray:100;stroke-dashoffset:0}
+.logo .word{font-size:19px;font-weight:500;letter-spacing:.08em;position:relative}
+.logo .word sup{font-size:7px;position:absolute;top:-1px;right:-9px}
+.logo .tag{font-size:6.5px;font-weight:500;letter-spacing:.32em;white-space:nowrap}
+
+/* ---------- Header + announcement ---------- */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:transform .5s var(--ease)}
+.hdr.hide{transform:translateY(-105%)}
+.announce{height:var(--bar-h);background:var(--gold);color:var(--ink);overflow:hidden;display:flex;align-items:center}
+.announce-track{display:flex;width:max-content;animation:tick 42s linear infinite}
+.announce span{font-family:var(--f-logo);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;padding-right:48px}
+.hdr-main{transition:background .4s ease,border-color .4s ease;border-bottom:1px solid transparent}
+.hdr.solid .hdr-main{background:rgba(14,13,12,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-d)}
+.hdr .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:68px;gap:16px}
+.nav{display:flex;gap:clamp(16px,2.2vw,34px)}
+.nav a{position:relative;padding-block:6px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.hdr-cta{justify-self:end;display:flex;align-items:center;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:12px;height:50px;padding-inline:26px;font-family:var(--f-display);font-weight:500;font-size:15px;letter-spacing:.12em;text-transform:uppercase;position:relative;overflow:hidden;isolation:isolate;white-space:nowrap;transition:color .45s var(--ease)}
+.btn .arr{display:inline-block;transition:transform .45s var(--ease)}
+.btn:hover .arr{transform:translateX(5px)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;transform:translateY(101%);transition:transform .55s var(--ease)}
+.btn:hover::before{transform:translateY(0)}
+.btn-solid{background:var(--paper);color:var(--ink)}
+.btn-solid::before{background:var(--gold)}
+.btn-line{border:1px solid var(--line-d);color:var(--paper)}
+.btn-line::before{background:var(--paper)}
+.btn-line:hover{color:var(--ink)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink::before{background:var(--gold)}
+.btn-ink:hover{color:var(--ink)}
+.btn-sm{height:40px;padding-inline:18px;font-size:13px}
+.menu-btn{display:none;width:40px;height:40px;position:relative}
+.menu-btn span{position:absolute;left:9px;right:9px;height:1.5px;background:currentColor;transition:transform .4s var(--ease),top .4s var(--ease)}
+.menu-btn span:nth-child(1){top:15px}.menu-btn span:nth-child(2){top:24px}
+.menu-open .menu-btn span:nth-child(1){top:19.5px;transform:rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){top:19.5px;transform:rotate(-45deg)}
+.drawer{position:fixed;inset:0;z-index:45;background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:110px var(--gutter) 40px;gap:6px;clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .drawer{clip-path:inset(0 0 0 0);visibility:visible}
+.drawer a{font-family:var(--f-display);font-size:clamp(40px,12vw,68px);text-transform:uppercase;font-weight:600;line-height:1.05}
+.drawer a small{font-family:var(--f-logo);font-size:12px;letter-spacing:.2em;color:var(--mute-d);margin-right:14px;vertical-align:middle}
+.drawer .btn{margin-top:28px;align-self:flex-start}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:clamp(680px,96svh,980px);display:flex;align-items:flex-end;overflow:hidden;background:var(--ink);isolation:isolate}
+.hero-media{position:absolute;top:0;right:0;bottom:0;width:min(58%,960px);z-index:-2;overflow:hidden;clip-path:inset(0 0 0 0)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 58%;transform-origin:55% 60%}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,rgba(14,13,12,.55) 22%,rgba(14,13,12,0) 48%),linear-gradient(0deg,var(--ink) 0%,rgba(14,13,12,0) 30%),linear-gradient(180deg,rgba(14,13,12,.7) 0%,rgba(14,13,12,0) 24%)}
+#dust{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;padding-top:136px;padding-bottom:clamp(28px,4vw,48px);display:grid;gap:clamp(22px,2.6vw,36px)}
+.eyebrow{display:flex;align-items:center;gap:14px;color:var(--gold)}
+.eyebrow i{font-style:normal;letter-spacing:.3em}
+.hero-title{font-size:var(--fs-hero);font-weight:600;line-height:.86;letter-spacing:-.01em}
+.hero-title .ln{display:block;overflow:hidden;padding-bottom:.05em;margin-bottom:-.05em}
+.hero-title .ln>span{display:inline-block}
+.hero-title .serif{font-size:.8em;color:var(--gold-hi);margin-left:.12em}
+.hero-sub{font-family:var(--f-serif);font-style:italic;font-size:clamp(21px,1.8vw,28px);line-height:1.2;color:var(--gold-hi);max-width:30ch}
+.hero-body{max-width:46ch;font-size:var(--fs-lead);line-height:1.5;color:#d8d4ce}
+.hero-row{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.hero-copy{display:grid;gap:14px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.specbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:0;border-top:1px solid var(--line-d);margin-top:clamp(8px,1.5vw,20px)}
+.specbar>div{padding:16px 18px 4px 0;display:grid;gap:4px}
+.specbar dt{color:var(--mute-d)}
+.specbar dd{margin:0;font-family:var(--f-display);font-size:clamp(16px,1.35vw,20px);text-transform:uppercase;letter-spacing:.04em}
+.scroll-cue{display:flex;align-items:center;gap:12px;color:var(--mute-d);align-self:end}
+.scroll-cue .bar{width:1px;height:42px;background:var(--line-d);position:relative;overflow:hidden}
+.scroll-cue .bar::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--gold);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{to{top:110%}}
+
+/* ---------- Ticker ---------- */
+.ticker{background:var(--paper);color:var(--ink);overflow:hidden;border-block:1px solid rgba(14,13,12,.2)}
+.ticker-track{display:flex;width:max-content;animation:tick 48s linear infinite}
+.ticker-skew{will-change:transform}
+.ticker span{font-family:var(--f-display);font-weight:600;font-size:clamp(20px,2.3vw,36px);text-transform:uppercase;padding:14px 0;display:flex;align-items:center;gap:clamp(18px,2vw,30px);padding-right:clamp(18px,2vw,30px);white-space:nowrap}
+.ticker .star{font-size:.55em;color:var(--gold-deep);font-style:normal}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- Formulation ---------- */
+.formula{padding-block:clamp(96px,13vw,190px)}
+.formula .wrap{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(24px,4vw,64px)}
+.formula .side{display:grid;gap:12px;align-content:start;padding-top:.9em}
+.formula .side .label{color:var(--gold-deep)}
+.formula .side h2{font-size:clamp(28px,2.6vw,40px);line-height:.95}
+.formula p.big{font-family:var(--f-display);font-weight:500;text-transform:uppercase;font-size:clamp(30px,4.2vw,70px);line-height:1;letter-spacing:-.005em}
+.formula p.big .w{display:inline-block;color:var(--ink);transition:color .2s linear}
+.js .formula p.big .w{color:rgba(14,13,12,.16)}
+.specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:clamp(48px,6vw,88px);border-top:1px solid var(--line-l)}
+.spec-item{padding:26px 24px 8px 0;display:grid;gap:12px;align-content:start}
+.spec-item b{font-family:var(--f-display);font-weight:600;font-size:clamp(22px,2vw,30px);text-transform:uppercase;line-height:1}
+.spec-item p{color:var(--mute-l);font-size:15px;line-height:1.5}
+.spec-item .label{color:var(--gold-deep)}
+
+/* ---------- Section heads ---------- */
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(40px,6vw,80px)}
+.sec-head h2{font-size:var(--fs-h2)}
+.sec-head h2 .serif{color:var(--gold-hi);font-size:.86em}
+.sec-light .sec-head h2 .serif{color:var(--gold-deep)}
+.sec-head .kick{display:block;margin-bottom:18px;color:var(--gold)}
+.sec-light .sec-head .kick{color:var(--gold-deep)}
+.sec-head p{max-width:44ch;color:var(--mute-d)}
+.sec-light .sec-head p{color:var(--mute-l)}
+
+/* ---------- Routine (8 steps) ---------- */
+.routine{padding-block:clamp(80px,10vw,140px) clamp(40px,6vw,80px)}
+.process{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border-top:1px solid var(--line-l);margin-bottom:clamp(40px,5vw,72px)}
+.process a{padding:14px 10px 12px 0;display:grid;gap:4px;color:var(--mute-l);border-top:2px solid transparent;margin-top:-1px;transition:color .4s,border-color .4s}
+.process a b{font-family:var(--f-display);font-weight:500;font-size:clamp(15px,1.3vw,19px);letter-spacing:.04em;color:inherit}
+.process a.on{color:var(--ink);border-top-color:var(--ink)}
+.routine-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.stage-wrap{position:sticky;top:calc(env(safe-area-inset-top,0px) + 120px);height:min(72vh,700px)}
+.stage{position:relative;height:100%;background:var(--stone);overflow:hidden}
+.stage .set{position:absolute;inset:0;background:var(--stone);opacity:0;visibility:hidden;transition:opacity .8s var(--ease),visibility .8s}
+.stage .set.on{opacity:1;visibility:visible}
+.stage .set img{position:absolute;mix-blend-mode:multiply;transition:transform 1.1s var(--ease)}
+.stage .set:not(.on) img{transform:translateY(6%) scale(.96)}
+.stage .ghost{position:absolute;left:-.04em;bottom:-.14em;font-family:var(--f-display);font-weight:700;font-size:clamp(110px,13vw,230px);line-height:.8;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(14,13,12,.22);pointer-events:none;white-space:nowrap}
+.stage .count{position:absolute;top:22px;left:24px;right:24px;display:flex;justify-content:space-between;color:var(--ink);z-index:2}
+.stage .prog{position:absolute;left:24px;right:24px;top:52px;height:2px;background:rgba(14,13,12,.12);z-index:2}
+.stage .prog i{position:absolute;inset:0;background:var(--ink);transform-origin:left;transform:scaleX(.125);transition:transform .8s var(--ease)}
+.steps{display:flex;flex-direction:column}
+.step{min-height:min(64vh,620px);display:flex;flex-direction:column;justify-content:center;gap:18px;padding-block:36px;border-top:1px solid var(--line-l)}
+.step:first-child{border-top:0}
+.step .num{display:flex;align-items:center;gap:14px;color:var(--gold-deep)}
+.step .num::after{content:"";flex:1;height:1px;background:var(--line-l)}
+.step h3{font-size:clamp(56px,6.6vw,112px);font-weight:700;line-height:.84}
+.step .prod{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 18px;padding-block:14px;border-block:1px solid var(--line-l)}
+.step .prod b{font-family:var(--f-display);font-weight:500;font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.step .prod .price{font-size:20px}
+.step .lede{font-size:var(--fs-lead);max-width:38ch;line-height:1.45}
+.step .how{color:var(--mute-l);font-size:15px;max-width:46ch}
+.step .buy{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;font-family:var(--f-display);text-transform:uppercase;letter-spacing:.12em;font-size:14px;padding-bottom:4px;border-bottom:1px solid currentColor}
+.step .buy .arr{transition:transform .45s var(--ease)}
+.step .buy:hover .arr{transform:translateX(5px)}
+.step .mob-shot{display:none}
+
+/* ---------- Statement: your shade exists ---------- */
+.statement{padding-block:clamp(96px,12vw,170px) 0;position:relative;overflow:hidden}
+.statement h2{font-size:clamp(64px,13vw,220px);line-height:.82;letter-spacing:-.02em}
+.statement h2 .o{color:transparent;-webkit-text-stroke:1.5px var(--paper)}
+.statement-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);margin-top:clamp(32px,4vw,56px);align-items:end}
+.statement-grid p{color:#cfcac3;font-size:var(--fs-lead);line-height:1.5;max-width:46ch}
+.statement-grid p+p{margin-top:16px;color:var(--mute-d);font-size:var(--fs-body)}
+.lineup{margin-top:clamp(56px,7vw,100px);background:var(--paper);position:relative;overflow:hidden}
+.lineup img{width:100%;mix-blend-mode:multiply}
+.lineup figcaption{padding:clamp(18px,3vw,36px) clamp(18px,3vw,36px) 0;color:var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px}
+.lineup figcaption b{font-family:var(--f-display);font-size:clamp(24px,3vw,44px);text-transform:uppercase;font-weight:600;line-height:1}
+.lineup figcaption span{color:var(--mute-l)}
+.tiers-legend{display:flex;justify-content:space-between;padding:0 clamp(18px,3vw,36px) clamp(16px,2.4vw,28px);color:var(--ink);gap:16px}
+.tiers-legend span{display:flex;align-items:center;gap:10px}
+.tiers-legend span::before{content:"";width:28px;height:1px;background:var(--ink)}
+
+/* ---------- Shade studio ---------- */
+.shades{padding-block:clamp(96px,12vw,170px)}
+.shade-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.plate{position:relative;aspect-ratio:1/1;background:var(--paper);overflow:hidden}
+.plate img{position:absolute;left:6%;top:10%;width:88%;height:82%;object-fit:contain;mix-blend-mode:multiply}
+.plate .tagline{position:absolute;left:22px;bottom:18px;right:22px;color:var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:16px;z-index:2}
+.plate .tagline b{font-family:var(--f-display);font-size:clamp(34px,4.4vw,64px);font-weight:600;line-height:1;letter-spacing:.01em;text-transform:uppercase}
+.plate .tagline span{color:var(--mute-l)}
+.plate .corner{position:absolute;left:22px;top:20px;right:22px;display:flex;justify-content:space-between;color:var(--mute-l);z-index:2}
+.tabs{display:inline-flex;border:1px solid var(--line-d);margin-bottom:26px;flex-wrap:wrap}
+.tabs button{padding:10px 16px;color:var(--mute-d);transition:background .4s,color .4s}
+.tabs button[aria-selected="true"]{background:var(--paper);color:var(--ink)}
+.tier{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.tier button{padding:8px 14px;border:1px solid var(--line-d);color:var(--mute-d);font-family:var(--f-display);text-transform:uppercase;letter-spacing:.08em;font-size:13px;transition:border-color .4s,color .4s,background .4s}
+.tier button[aria-pressed="true"]{border-color:var(--gold);color:var(--ink);background:var(--gold)}
+.shade-ui h3{font-size:var(--fs-h3);margin-bottom:12px}
+.shade-ui .copy{color:var(--mute-d);max-width:44ch}
+.swatches{display:flex;flex-wrap:wrap;gap:14px;margin-block:26px 30px}
+.sw{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--mute-d);min-width:58px}
+.sw .dot{width:54px;height:54px;border-radius:50%;background:var(--c);box-shadow:inset 0 -8px 16px rgba(0,0,0,.18),inset 0 6px 12px rgba(255,255,255,.18);position:relative;transition:transform .5s var(--ease)}
+.sw .dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--paper);opacity:0;transform:scale(.85);transition:opacity .4s,transform .5s var(--ease)}
+.sw:hover .dot{transform:translateY(-4px)}
+.sw[aria-pressed="true"]{color:var(--paper)}
+.sw[aria-pressed="true"] .dot::after{opacity:1;transform:scale(1)}
+.sw .label{font-size:10.5px;letter-spacing:.14em}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;padding-block:22px;border-top:1px solid var(--line-d);color:var(--mute-d);font-size:15px;margin:0}
+.spec dt{font-family:var(--f-logo);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding-top:3px}
+.spec dd{margin:0;color:var(--paper)}
+.shade-buy{display:flex;flex-wrap:wrap;align-items:center;gap:18px 24px;padding-top:22px;border-top:1px solid var(--line-d)}
+.shade-buy .price{font-size:clamp(30px,3vw,44px);line-height:1}
+
+/* ---------- Colour corrector ---------- */
+.cc{padding-block:clamp(96px,12vw,170px)}
+.cc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.cc-photo{position:relative;background:var(--stone)}
+.cc-photo img{mix-blend-mode:multiply;width:100%}
+.cc-photo .ring{position:absolute;width:22%;aspect-ratio:1.6/1;border:1.5px solid var(--ink);transform:translate(-50%,-50%) scale(.6);opacity:0;transition:left .7s var(--ease),top .7s var(--ease),opacity .4s,transform .6s var(--ease);pointer-events:none}
+.cc-photo .ring.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.cc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-l)}
+.cc-list button{width:100%;display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:18px;padding:16px 4px;border-bottom:1px solid var(--line-l);text-align:left;transition:padding .5s var(--ease),background .4s}
+.cc-list .chip{width:34px;height:34px;background:var(--c);border-radius:2px}
+.cc-list b{font-family:var(--f-display);font-weight:500;font-size:clamp(19px,1.7vw,24px);text-transform:uppercase;line-height:1.1}
+.cc-list small{display:block;font-size:15px;color:var(--mute-l);max-height:0;overflow:hidden;opacity:0;transition:max-height .6s var(--ease),opacity .4s,margin .5s;margin-top:0;line-height:1.45}
+.cc-list .plus{font-family:var(--f-display);font-size:22px;transition:transform .5s var(--ease)}
+.cc-list button[aria-expanded="true"]{padding-left:14px;background:rgba(14,13,12,.04)}
+.cc-list button[aria-expanded="true"] small{max-height:7em;opacity:1;margin-top:6px}
+.cc-list button[aria-expanded="true"] .plus{transform:rotate(45deg)}
+.cc-note{margin-top:22px;color:var(--mute-l);font-size:15px;max-width:48ch}
+.cc-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:26px}
+.cc-foot .price{font-size:28px}
+
+/* ---------- Collection grid ---------- */
+.edit{padding-block:0 clamp(96px,12vw,170px)}
+.prod-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.card{display:flex;flex-direction:column;gap:14px;perspective:900px}
+.card .ph{position:relative;aspect-ratio:4/5;background:var(--paper);overflow:hidden;transform-style:preserve-3d;transition:transform .6s var(--ease)}
+.card .ph img{position:absolute;inset:7%;width:86%;height:86%;object-fit:contain;mix-blend-mode:multiply;transition:opacity .6s var(--ease),transform .9s var(--ease)}
+.card .ph img.alt{opacity:0;transform:scale(1.04)}
+.card:hover .ph img.main{opacity:0;transform:scale(.97)}
+.card:hover .ph img.alt{opacity:1;transform:scale(1)}
+.card .step-tag{position:absolute;left:14px;top:14px;color:var(--ink);z-index:2;display:flex;gap:8px;align-items:center}
+.card .step-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink)}
+.card .quick{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;height:44px;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper);font-family:var(--f-display);text-transform:uppercase;letter-spacing:.12em;font-size:13px;transform:translateY(130%);transition:transform .55s var(--ease)}
+.card:hover .quick,.card:focus-visible .quick{transform:translateY(0)}
+.card .info{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;align-items:baseline}
+.card h3{font-size:clamp(20px,1.6vw,24px);font-weight:500;line-height:1.1;letter-spacing:.01em}
+.card .info .price{font-size:19px;white-space:nowrap}
+.card .info p{grid-column:1/-1;color:var(--mute-l);font-size:14.5px;line-height:1.4}
+.card .meta{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--mute-l);margin-top:4px}
+.card .meta .label{font-size:10.5px;letter-spacing:.16em}
+.dots{display:flex;gap:4px}
+.dots i{width:11px;height:11px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(14,13,12,.12)}
+.edit-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px 40px;margin-top:clamp(48px,6vw,80px);padding-top:32px;border-top:1px solid var(--line-l)}
+.edit-foot h3{font-size:clamp(30px,3.6vw,56px);font-weight:600;line-height:.95;max-width:18ch}
+.edit-foot p{color:var(--mute-l);max-width:62ch;margin-top:16px}
+
+/* ---------- Essentials ---------- */
+.skin{padding-block:clamp(96px,12vw,170px)}
+.skin-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.skin-photo{position:relative;overflow:hidden;aspect-ratio:4/5;background:#e3e4e6;clip-path:inset(0 0 0 0)}
+.skin-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.skin-copy h2{font-size:clamp(44px,6vw,96px);margin-bottom:24px}
+.skin-copy h2 .serif{color:var(--gold-hi);font-size:.86em}
+.skin-copy>p{color:#cfcac3;font-size:var(--fs-lead);max-width:44ch;line-height:1.5}
+.ess{list-style:none;margin:32px 0 34px;padding:0;border-top:1px solid var(--line-d)}
+.ess li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--line-d);color:#d8d4ce}
+.ess li::before{content:"";width:16px;height:1px;background:var(--gold);margin-top:.8em}
+
+/* ---------- Standards ---------- */
+.standards{padding-block:clamp(80px,10vw,140px);border-top:1px solid var(--line-d);overflow:hidden}
+.std-grid{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(36px,7vw,120px);align-items:center}
+.stamp{position:relative;width:clamp(200px,22vw,300px);aspect-ratio:1}
+.stamp svg{width:100%;height:100%;animation:spin 28s linear infinite}
+.stamp text{fill:var(--paper);font-family:var(--f-logo);font-size:9.6px;letter-spacing:2.6px;font-weight:500}
+.stamp .core{position:absolute;inset:26%;border:1px solid var(--line-d);border-radius:50%;display:grid;place-items:center;text-align:center}
+.stamp .core b{font-family:var(--f-display);font-weight:600;font-size:clamp(30px,3.4vw,46px);line-height:.9;display:block}
+.stamp .core span{color:var(--mute-d)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.std-copy h2{font-size:clamp(40px,5vw,80px);margin-block:14px 20px}
+.std-copy h2 .serif{color:var(--gold-hi);font-size:.86em}
+.std-copy>p{color:var(--mute-d);max-width:60ch}
+.std-copy>p.punch{color:var(--paper);font-family:var(--f-display);text-transform:uppercase;font-size:20px;letter-spacing:.06em;margin-top:14px}
+.creds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line-d);margin-top:36px}
+.cred{padding:24px 18px 6px 0;display:grid;gap:8px}
+.cred b{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,3vw,48px);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cred span{color:var(--mute-d)}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.badges span{border:1px solid var(--line-d);padding:8px 14px;color:var(--mute-d)}
+
+/* ---------- FAQ ---------- */
+.faq{padding-block:clamp(96px,12vw,170px)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6vw,96px)}
+.faq-grid .sec-head{margin-bottom:0;display:block}
+.faq-grid .sec-head h2{font-size:clamp(44px,5.4vw,88px)}
+.faq-grid .sec-head p{margin-top:20px}
+.qa{border-top:1px solid var(--line-l)}
+.qa details{border-bottom:1px solid var(--line-l)}
+.qa summary{list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 0;cursor:pointer;font-family:var(--f-display);text-transform:uppercase;font-weight:500;font-size:clamp(18px,1.6vw,23px);line-height:1.2}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .plus{font-size:24px;transition:transform .5s var(--ease)}
+.qa details[open] summary .plus{transform:rotate(45deg)}
+.qa .ans{overflow:hidden}
+.qa .ans p{padding:0 0 24px;color:var(--mute-l);max-width:66ch}
+
+/* ---------- Final CTA ---------- */
+.final{position:relative;overflow:hidden;padding-block:clamp(80px,10vw,140px) clamp(48px,6vw,80px);background:var(--gold);color:var(--ink)}
+.final-mq{display:flex;width:max-content;animation:tick 26s linear infinite reverse}
+.final-mq span{font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:clamp(90px,17vw,280px);line-height:.85;padding-right:.25em;white-space:nowrap}
+.final-mq span.o{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.final .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:clamp(40px,5vw,64px)}
+.final p{max-width:46ch;font-size:var(--fs-lead);line-height:1.45}
+.final .contact{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:22px;font-size:15px}
+.final .contact span{display:inline-flex;align-items:center;gap:10px}
+.copy-btn{font-family:var(--f-logo);font-size:11px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:1px}
+.big-btn{height:66px;padding-inline:36px;font-size:17px}
+
+/* ---------- Footer ---------- */
+footer{padding-block:48px calc(36px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line-d)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;color:var(--mute-d);font-size:14px}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer nav a:hover{color:var(--paper)}
+
+/* ---------- Cursor ---------- */
+.cursor{position:fixed;left:0;top:0;z-index:80;pointer-events:none;display:none}
+.cursor .ring{width:42px;height:42px;margin:-21px 0 0 -21px;border:1px solid rgba(244,243,240,.7);border-radius:50%;display:grid;place-items:center;transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease),background .4s,border-color .4s;mix-blend-mode:difference}
+.cursor .ring span{font-family:var(--f-logo);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);opacity:0;transition:opacity .3s}
+.cursor.big .ring{width:86px;height:86px;margin:-43px 0 0 -43px;background:var(--paper);border-color:var(--paper)}
+.cursor.big .ring span{opacity:1}
+@media (pointer:fine) and (min-width:900px){.cursor{display:block}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1180px){
+  .prod-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .specs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .creds{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .process{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .nav,.hdr-cta .btn{display:none}
+  .menu-btn{display:block}
+  .hdr .wrap{grid-template-columns:auto 1fr auto;height:60px}
+  .hdr .logo{grid-column:1}
+  .hdr-cta{grid-column:3}
+  .formula .wrap,.faq-grid{grid-template-columns:minmax(0,1fr)}
+  .routine-grid{grid-template-columns:minmax(0,1fr)}
+  .stage-wrap{display:none}
+  .process{display:none}
+  .step{min-height:0;padding-block:40px}
+  .step .mob-shot{display:block;position:relative;aspect-ratio:4/3;background:var(--paper);overflow:hidden;margin-bottom:6px}
+  .step .mob-shot img{position:absolute;mix-blend-mode:multiply}
+  .shade-grid,.cc-grid,.skin-grid,.statement-grid{grid-template-columns:minmax(0,1fr)}
+  .std-grid{grid-template-columns:minmax(0,1fr);justify-items:start}
+  .edit-foot{grid-template-columns:minmax(0,1fr)}
+  .specbar{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .specbar .scroll-cue{display:none}
+}
+@media (max-width:760px){
+  .hero{min-height:0;align-items:stretch}
+  .hero-media{width:100%;bottom:auto;height:min(112vw,620px)}
+  .hero-media::after{background:linear-gradient(0deg,var(--ink) 4%,rgba(14,13,12,.35) 38%,rgba(14,13,12,0) 60%),linear-gradient(180deg,rgba(14,13,12,.75) 0%,rgba(14,13,12,0) 26%)}
+  .hero .wrap{padding-top:min(78vw,430px)}
+  .hero-ctas .btn{flex:1;justify-content:center}
+  .specbar{grid-template-columns:minmax(0,1fr)}
+  .specbar>div{padding:12px 0;grid-template-columns:auto 1fr;align-items:baseline;gap:14px;border-bottom:1px solid var(--line-d)}
+  .tiers-legend{flex-direction:column;gap:6px}
+  .sw{min-width:52px}
+  .sw .dot{width:46px;height:46px}
+}
+@media (max-width:520px){
+  .specs,.creds{grid-template-columns:minmax(0,1fr)}
+  .card .meta .label{display:none}
+  .card .info{grid-template-columns:minmax(0,1fr)}
+}
+@media (hover:none){.card .quick{display:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .js .formula p.big .w{color:var(--ink)}
+}
+
+/* ===== v3 additions ===== */
+.hero .wrap{padding-top:150px;padding-bottom:clamp(44px,6vw,80px)}
+.hero{min-height:clamp(640px,92svh,940px)}
+.hero-meta{position:absolute;right:var(--gutter);bottom:clamp(44px,6vw,80px);writing-mode:vertical-rl;color:var(--mute-d);display:flex;gap:22px;white-space:nowrap}
+.hero-meta b{color:var(--paper);font-weight:500}
+.hero-sub{max-width:34ch}
+
+/* Collection steps */
+.step .size{display:flex;align-items:center;gap:12px;color:var(--mute-l)}
+.step .size::before{content:"";width:18px;height:1px;background:var(--gold-deep)}
+.cart{align-self:flex-start;display:inline-flex;align-items:center;gap:12px;height:46px;padding-inline:22px;background:var(--ink);color:var(--paper);font-family:var(--f-display);font-weight:500;font-size:14px;letter-spacing:.12em;text-transform:uppercase;position:relative;overflow:hidden;isolation:isolate;transition:color .45s var(--ease)}
+.cart::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gold);transform:translateY(101%);transition:transform .55s var(--ease)}
+.cart:hover::before{transform:translateY(0)}
+.cart:hover{color:var(--ink)}
+.cart .arr{transition:transform .45s var(--ease)}
+.cart:hover .arr{transform:translateX(5px)}
+
+/* Kits */
+.kits{padding-block:clamp(80px,10vw,140px) clamp(96px,12vw,170px);border-top:1px solid var(--line-l)}
+.kit-toggle{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-bottom:clamp(28px,3vw,44px);color:var(--mute-l)}
+.kit-toggle .seg{display:inline-flex;border:1px solid var(--line-l)}
+.kit-toggle button{padding:10px 16px;font-family:var(--f-display);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--mute-l);transition:background .4s,color .4s}
+.kit-toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.kit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,26px)}
+.kit{display:flex;flex-direction:column;background:var(--paper);position:relative}
+.kit .shot{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--paper);border-bottom:1px solid var(--line-l)}
+.kit .shot img{position:absolute;bottom:4%;mix-blend-mode:multiply;transition:transform .8s var(--ease)}
+.kit:hover .shot img{transform:translateX(calc(var(--fan,0) * 1%)) rotate(calc(var(--fan,0) * .6deg))}
+.kit .off{position:absolute;top:14px;right:14px;z-index:2;width:62px;height:62px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;text-align:center;font-family:var(--f-display);font-weight:600;font-size:18px;line-height:.9}
+.kit .off small{display:block;font-family:var(--f-logo);font-size:8.5px;letter-spacing:.18em;font-weight:500}
+.kit .letter{position:absolute;left:16px;top:12px;z-index:2;font-family:var(--f-display);font-weight:700;font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(14,13,12,.28)}
+.kit .body{display:flex;flex-direction:column;gap:14px;padding:22px 22px 24px;flex:1}
+.kit .tags{display:flex;flex-wrap:wrap;gap:6px}
+.kit .tags span{font-family:var(--f-logo);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:4px 8px;border:1px solid var(--line-l);color:var(--mute-l)}
+.kit h3{font-size:clamp(26px,2.3vw,34px);line-height:.95}
+.kit p.desc{color:var(--mute-l);font-size:15px;line-height:1.5}
+.kit ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-l)}
+.kit li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line-l);font-size:14.5px}
+.kit li em{font-style:normal;color:var(--mute-l);font-size:13px;text-align:right}
+.kit .buyrow{margin-top:auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;padding-top:8px}
+.kit .prices{display:grid;gap:2px}
+.kit .mrp{color:var(--mute-l);font-size:14px}
+.kit .mrp s{text-decoration-thickness:1px}
+.kit .now{font-family:var(--f-display);font-weight:600;font-size:32px;line-height:1;font-variant-numeric:tabular-nums}
+.kit .tiernote{font-family:var(--f-logo);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+
+/* Why Chullan */
+.why{padding-block:clamp(96px,12vw,170px)}
+.why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-d)}
+.pillar{padding:34px 28px 10px 0;display:grid;gap:18px;align-content:start;position:relative}
+.pillar:not(:first-child){padding-left:28px;border-left:1px solid var(--line-d)}
+.pillar .n{font-family:var(--f-display);font-weight:700;font-size:clamp(70px,7vw,120px);line-height:.8;color:transparent;-webkit-text-stroke:1px var(--gold)}
+.pillar h3{font-size:clamp(24px,2.1vw,32px);line-height:1}
+.pillar p{color:var(--mute-d);max-width:40ch}
+.pillar::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.pillar:hover::after{transform:scaleX(1)}
+
+/* Join the list */
+.join{position:relative;overflow:hidden;padding-block:clamp(72px,9vw,120px) clamp(56px,7vw,96px);background:var(--gold);color:var(--ink)}
+.join .final-mq span{font-size:clamp(80px,15vw,240px)}
+.join .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 64px;align-items:end;margin-top:clamp(36px,4vw,56px)}
+.join p.lead{font-size:var(--fs-lead);line-height:1.45;max-width:42ch}
+.join form{display:grid;gap:10px}
+.join .row{display:flex;border-bottom:1.5px solid var(--ink)}
+.join label{display:block}
+.join input{flex:1;min-width:0;background:transparent;border:0;padding:14px 2px;font:inherit;font-size:18px;color:var(--ink);outline:none}
+.join input::placeholder{color:rgba(14,13,12,.5)}
+.join .row:focus-within{border-bottom-width:2.5px}
+.join button{font-family:var(--f-display);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:15px;padding-inline:18px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.join button .arr{transition:transform .45s var(--ease)}
+.join button:hover .arr{transform:translateX(5px)}
+.join small{color:rgba(14,13,12,.66);font-size:13px}
+.join .msg{min-height:1.4em;font-size:14px;font-weight:600}
+
+@media (max-width:1180px){.kit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){
+  .why-grid{grid-template-columns:minmax(0,1fr)}
+  .pillar,.pillar:not(:first-child){padding:28px 0 18px;border-left:0;border-bottom:1px solid var(--line-d)}
+  .join .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero-meta{display:none}
+}
+@media (max-width:640px){.kit-grid{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"><div class="ring"><span>Shop</span></div></div>
+
+<header class="hdr" id="hdr">
+  <div class="announce" aria-label="Free shipping over ₹999. Professional base makeup. Formulated in the USA.">
+    <div class="announce-track" aria-hidden="true">
+      <span>Free shipping over ₹999 · Professional base makeup · Formulated in the USA ·</span>
+      <span>Free shipping over ₹999 · Professional base makeup · Formulated in the USA ·</span>
+      <span>Free shipping over ₹999 · Professional base makeup · Formulated in the USA ·</span>
+      <span>Free shipping over ₹999 · Professional base makeup · Formulated in the USA ·</span>
+    </div>
+  </div>
+  <div class="hdr-main">
+    <div class="wrap">
+      <nav class="nav label" aria-label="Sections">
+        <a href="#range">Collection</a>
+        <a href="#kits">Kits</a>
+        <a href="#shades">Shades</a>
+        <a href="#why">Why Chullan</a>
+      </nav>
+      <a class="logo" href="#top" aria-label="Chullan home">
+        <svg class="frame" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100" vector-effect="non-scaling-stroke"/></svg>
+        <span class="word">CHULLAN<sup>®</sup></span>
+        <span class="tag">★★★ MAKE UP ★★★</span>
+        <span class="tag">PROFESSIONAL</span>
+      </a>
+      <div class="hdr-cta">
+        <a class="btn btn-solid btn-sm mag" href="#range" data-cursor="Shop">Shop now <span class="arr">→</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <a href="#range"><small>01</small>Collection</a>
+  <a href="#kits"><small>02</small>Kits</a>
+  <a href="#shades"><small>03</small>Shades</a>
+  <a href="#why"><small>04</small>Why Chullan</a>
+  <a class="btn btn-solid" data-buy="ALL" href="https://chullan.aistore.bz/" target="_blank" rel="noopener">Visit the store <span class="arr">→</span></a>
+</nav>
+
+<main id="top">
+  <!-- 2. HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-media">
+      <picture>
+        <source media="(max-width:759px)" srcset="img/hero-900.webp">
+        <img id="heroImg" src="img/hero-1600.webp" width="1600" height="2400" alt="Chullan Anti-Shine Powder on a black plinth in a cloud of loose powder">
+      </picture>
+    </div>
+    <canvas id="dust" aria-hidden="true"></canvas>
+    <div class="hero-meta label" aria-hidden="true"><span>Anti-Shine Powder</span><b>10G.</b><span>Make up professional</span></div>
+    <div class="wrap">
+      <div class="eyebrow label"><i>★★★</i><span data-hero>Professional salon-grade base makeup</span></div>
+      <h1 class="hero-title" aria-label="Professional makeup for Indian skin tones">
+        <span class="ln"><span>Professional</span></span>
+        <span class="ln"><span>makeup<span class="serif">for</span></span></span>
+        <span class="ln"><span>Indian skin</span></span>
+        <span class="ln"><span>tones.</span></span>
+      </h1>
+      <div class="hero-row">
+        <p class="hero-sub" data-hero>Not adapted. Not approximated. Formulated from the ground up for your skin tone.</p>
+        <div class="hero-ctas" data-hero>
+          <a class="btn btn-solid mag" href="#range" data-cursor="Shop">Shop now <span class="arr">→</span></a>
+          <a class="btn btn-line mag" href="#kits" data-cursor="Kits">View kits</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. MARQUEE -->
+  <div class="ticker" aria-label="Formulated in the USA. For Indian skin tones. Paraben free. Mineral oil free. Dermatologically tested. Professional grade makeup. Alcohol-free setting spray. Stability tested at 40°C.">
+    <div class="ticker-skew" id="tickerSkew">
+      <div class="ticker-track" aria-hidden="true">
+        <span>Formulated in the USA <i class="star">★</i> For Indian skin tones <i class="star">★</i> Paraben free <i class="star">★</i> Mineral oil free <i class="star">★</i> Dermatologically tested <i class="star">★</i> Professional grade makeup <i class="star">★</i> Alcohol-free setting spray <i class="star">★</i> Stability tested at 40°C <i class="star">★</i></span>
+        <span>Formulated in the USA <i class="star">★</i> For Indian skin tones <i class="star">★</i> Paraben free <i class="star">★</i> Mineral oil free <i class="star">★</i> Dermatologically tested <i class="star">★</i> Professional grade makeup <i class="star">★</i> Alcohol-free setting spray <i class="star">★</i> Stability tested at 40°C <i class="star">★</i></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. THE CHULLAN COLLECTION -->
+  <section class="routine sec-light" id="range" aria-labelledby="routineH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="routineH"><span class="kick label">The Chullan collection</span>One collection.<br><span class="serif">One flawless</span> process.</h2>
+        <p>Great makeup starts before foundation and lasts long after it. Eight products. Applied in order. Each one sets up the next.</p>
+      </div>
+      <nav class="process label" id="process" aria-label="Routine steps"><a href="#step-0" class="on"><span>01</span><b>Prep</b></a><a href="#step-1"><span>02</span><b>Protect</b></a><a href="#step-2"><span>03</span><b>Prime</b></a><a href="#step-3"><span>04</span><b>Correct</b></a><a href="#step-4"><span>05</span><b>Conceal</b></a><a href="#step-5"><span>06</span><b>Build</b></a><a href="#step-6"><span>07</span><b>Control</b></a><a href="#step-7"><span>08</span><b>Set</b></a></nav>
+      <div class="routine-grid">
+        <div class="stage-wrap" aria-hidden="true">
+          <div class="stage" id="stage">
+            <div class="count label"><span id="stepNo">Step 01 / 08</span><span id="stepName">Prep</span></div>
+            <div class="prog"><i id="prog"></i></div>
+            <div class="set on"><span class="ghost">Prep</span><img src="img/moist-back.webp" alt="" style="width:44%;left:44%;top:16%"><img src="img/moist.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Protect</span><img src="img/sun-back.webp" alt="" style="width:44%;left:46%;top:16%"><img src="img/sun.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Prime</span><img src="img/primer-back.webp" alt="" style="width:46%;left:48%;top:18%"><img src="img/primer.webp" alt="" style="width:64%;left:6%;top:10%"></div><div class="set"><span class="ghost">Correct</span><img src="img/cc-angle.webp" alt="" style="width:80%;left:10%;top:16%"></div><div class="set"><span class="ghost">Conceal</span><img src="img/conc-trio.webp" alt="" style="width:78%;left:11%;top:12%"></div><div class="set"><span class="ghost">Build</span><img src="img/pb-cocoa.webp" alt="" style="width:46%;left:50%;top:18%"><img src="img/f-c2w1.webp" alt="" style="width:60%;left:6%;top:12%"></div><div class="set"><span class="ghost">Control</span><img src="img/powder-top.webp" alt="" style="width:40%;left:56%;top:10%"><img src="img/powder.webp" alt="" style="width:70%;left:8%;top:22%"></div><div class="set"><span class="ghost">Set</span><img src="img/spray-back.webp" alt="" style="width:62%;left:38%;top:12%"><img src="img/spray.webp" alt="" style="width:74%;left:6%;top:8%"></div>
+          </div>
+        </div>
+        <div class="steps">
+          <article class="step" id="step-0">
+            <div class="mob-shot" aria-hidden="true"><img src="img/moist.webp" alt="" style="width:66%;left:17%;top:-4%"></div>
+            <p class="num label">Step 01</p>
+            <h3>Prep</h3>
+            <div class="prod"><b>Moisturiser</b><span class="price">₹1,100</span></div>
+            <p class="lede">Lightweight hydration that sits under sunscreen and primer without pilling.</p>
+            <p class="size label">100 g</p>
+            <a class="cart mag" data-buy="MOIST" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
+          </article>
+          <article class="step" id="step-1">
+            <div class="mob-shot" aria-hidden="true"><img src="img/sun.webp" alt="" style="width:66%;left:17%;top:-4%"></div>
+            <p class="num label">Step 02</p>
+            <h3>Protect</h3>
+            <div class="prod"><b>Sunscreen SPF 50</b><span class="price">₹1,200</span></div>
+            <p class="lede">SPF 50 with no white cast. Non-negotiable before makeup.</p>
+            <p class="size label">100 g</p>
+            <a class="cart mag" data-buy="SUN50" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
+          </article>
+          <article class="step" id="step-2">
+            <div class="mob-shot" aria-hidden="true"><img src="img/primer.webp" alt="" style="width:66%;left:17%;top:-4%"></div>
+            <p class="num label">Step 03</p>
+            <h3>Prime</h3>
+            <div class="prod"><b>Hydrating Primer</b><span class="price">₹1,500</span></div>
+            <p class="lede">Jojoba-infused grip primer. Keeps foundation locked without drying out your skin.</p>
+            <p class="size label">30 g</p>
+            <a class="cart mag" data-buy="PRIMER" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
+          </article>
+          <article class="step" id="step-3">
+            <div class="mob-shot" aria-hidden="true"><img src="img/cc-angle.webp" alt="" style="width:76%;left:12%;top:2%"></div>
+            <p class="num label">Step 04</p>
+            <h3>Correct</h3>
+            <div class="prod"><b>Colour Corrector Palette</b><span class="price">₹1,950</span></div>
+            <p class="lede">Six corrective shades for dark circles, redness and hyperpigmentation.</p>
+            <p class="size label">6 × 4 g</p>
+            <a class="cart mag" data-buy="CORR" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
+          </article>
+          <article class="step" id="step-4">
+            <div class="mob-shot" aria-hidden="true"><img src="img/conc-trio.webp" alt="" style="width:76%;left:12%;top:0%"></div>
+            <p class="num label">Step 05</p>
+            <h3>Conceal</h3>
+            <div class="prod"><b>Concealer</b><span class="price">₹1,200</span></div>
+            <p class="lede">Full coverage in three warm shades. Blends easily and doesn&#x27;t crease under the eyes by midday.</p>
+            <p class="size label">30 g · 3 shades</p>
+            <a class="cart mag" data-buy="CONC" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
+          </article>
+          <article class="step" id="step-5">
+            <div class="mob-shot" aria-hidden="true"><img src="img/pb-cocoa.webp" alt="" style="width:48%;left:48%;top:4%"><img src="img/f-c2w1.webp" alt="" style="width:60%;left:4%;top:0%"></div>
+            <p class="num label">Step 06</p>
+            <h3>Build</h3>
+            <div class="prod"><b>Liquid Foundation</b><span class="price">From ₹1,200</span></div>
+            <p class="lede">Eight shades. The final coverage layer that unifies everything underneath into one seamless finish.</p>
+            <p class="size label">30 ml · 8 shades</p>
+            <a class="cart mag" data-buy="FND" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
+          </article>
+          <article class="step" id="step-6">
+            <div class="mob-shot" aria-hidden="true"><img src="img/powder.webp" alt="" style="width:66%;left:17%;top:-2%"></div>
+            <p class="num label">Step 07</p>
+            <h3>Control</h3>
+            <div class="prod"><b>Anti-Shine Powder</b><span class="price">₹795</span></div>
+            <p class="lede">Shine gone. Base locked. Controls oil through humidity without the dry, cakey look.</p>
+            <p class="size label">10 g · 4 shades</p>
+            <a class="cart mag" data-buy="PWD" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
+          </article>
+          <article class="step" id="step-7">
+            <div class="mob-shot" aria-hidden="true"><img src="img/spray.webp" alt="" style="width:70%;left:15%;top:-4%"></div>
+            <p class="num label">Step 08</p>
+            <h3>Set</h3>
+            <div class="prod"><b>Setting Spray</b><span class="price">₹1,200</span></div>
+            <p class="lede">Lasting hold. Alcohol-free, with a technology that locks the look through heat and humidity.</p>
+            <p class="size label">100 ml</p>
+            <a class="cart mag" data-buy="SPRAY" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. KITS -->
+  <section class="kits sec-light" id="kits" aria-labelledby="kitsH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="kitsH"><span class="kick label">Curated kits</span>Kits for <span class="serif">every</span> routine</h2>
+        <p>Pre-built kits for everyday wear, from campus to the bridal chair and the professional's hands, for men, for oily skin, for first-timers. Pick the one that fits how you show up.</p>
+      </div>
+      <div class="kit-toggle">
+        <span class="label">Show prices with</span>
+        <div class="seg" id="kitTier" role="group" aria-label="Foundation in kits">
+          <button aria-pressed="true" data-t="pb">Professional Base</button>
+          <button aria-pressed="false" data-t="pg">Pro Glow</button>
+        </div>
+        <span class="label">foundation</span>
+      </div>
+      <div class="kit-grid">
+        <article class="kit" data-reveal>
+          <div class="shot" aria-hidden="true"><span class="letter">A</span><span class="off">10%<small>OFF</small></span><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:52%;left:0.0%;z-index:9;--fan:-1.5"><img src="img/powder.webp" alt="" style="width:52%;left:48.0%;z-index:10;--fan:1.5"></div>
+          <div class="body">
+            <div class="tags"><span>Quick routine</span><span>2-step base</span></div>
+            <h3>Quick Makeup</h3>
+            <p class="desc">Two products. One finished base. For the days you have five minutes but still need to show up.</p>
+            <ul aria-label="What's inside"><li><span>1 × Liquid Foundation</span><em>shade selected at checkout</em></li><li><span>1 × Anti-Shine Powder</span><em>shade selected at checkout</em></li></ul>
+            <div class="buyrow"><div class="prices" data-tiered><span class="tiernote">With <span class="tn">Professional Base</span> foundation</span><span class="mrp">MRP <s class="m" data-pb="₹1,995" data-pg="₹2,595">₹1,995</s> · 10% off</span><span class="now" data-pb="₹1,796" data-pg="₹2,336">₹1,796</span></div><a class="cart mag" data-buy="KIT-QUICK" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a></div>
+          </div>
+        </article>
+        <article class="kit" data-reveal>
+          <div class="shot" aria-hidden="true"><span class="letter">B</span><span class="off">15%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:44%;left:0.0%;z-index:9;--fan:-3.0"><img src="img/sun.webp" alt="" style="width:44%;left:28.0%;z-index:10;--fan:0.0"><img src="img/powder.webp" alt="" style="width:44%;left:56.0%;z-index:9;--fan:3.0"></div>
+          <div class="body">
+            <div class="tags"><span>For men</span><span>Matte finish</span><span>No makeup look</span></div>
+            <h3>Men</h3>
+            <p class="desc">Skincare and oil control without the makeup counter feel. Clean, matte, done.</p>
+            <ul aria-label="What's inside"><li><span>1 × Moisturiser</span><em>100 g</em></li><li><span>1 × Sunscreen SPF 50</span><em>100 g</em></li><li><span>1 × Anti-Shine Powder</span><em>shade selected at checkout</em></li></ul>
+            <div class="buyrow"><div class="prices"><span class="tiernote">No foundation in this kit</span><span class="mrp">MRP <s>₹3,095</s> · 15% off</span><span class="now">₹2,631</span></div><a class="cart mag" data-buy="KIT-MEN" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a></div>
+          </div>
+        </article>
+        <article class="kit" data-reveal>
+          <div class="shot" aria-hidden="true"><span class="letter">C</span><span class="off">15%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:44%;left:0.0%;z-index:9;--fan:-3.0"><img src="img/sun.webp" alt="" style="width:44%;left:28.0%;z-index:10;--fan:0.0"><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:44%;left:56.0%;z-index:9;--fan:3.0"></div>
+          <div class="body">
+            <div class="tags"><span>For men</span><span>Natural coverage</span><span>Everyday wear</span></div>
+            <h3>Men (Coverage)</h3>
+            <p class="desc">Everything from skincare to coverage. Natural finish no one knows, and that&#x27;s the point.</p>
+            <ul aria-label="What's inside"><li><span>1 × Moisturiser</span><em>100 g</em></li><li><span>1 × Sunscreen SPF 50</span><em>100 g</em></li><li><span>1 × Liquid Foundation</span><em>shade selected at checkout</em></li></ul>
+            <div class="buyrow"><div class="prices" data-tiered><span class="tiernote">With <span class="tn">Professional Base</span> foundation</span><span class="mrp">MRP <s class="m" data-pb="₹3,500" data-pg="₹4,100">₹3,500</s> · 15% off</span><span class="now" data-pb="₹2,975" data-pg="₹3,485">₹2,975</span></div><a class="cart mag" data-buy="KIT-MENCOV" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a></div>
+          </div>
+        </article>
+        <article class="kit" data-reveal>
+          <div class="shot" aria-hidden="true"><span class="letter">D</span><span class="off">15%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:38%;left:0.0%;z-index:8;--fan:-4.5"><img src="img/sun.webp" alt="" style="width:38%;left:20.7%;z-index:9;--fan:-1.5"><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:38%;left:41.3%;z-index:10;--fan:1.5"><img src="img/powder.webp" alt="" style="width:38%;left:62.0%;z-index:9;--fan:4.5"></div>
+          <div class="body">
+            <div class="tags"><span>Daily wear</span><span>All-day oil control</span><span>College & work</span></div>
+            <h3>Campus Kit (9-5)</h3>
+            <p class="desc">Morning to evening in four steps. Sun protection, coverage and oil control that lasts the full working day.</p>
+            <ul aria-label="What's inside"><li><span>1 × Moisturiser</span><em>100 g</em></li><li><span>1 × Sunscreen SPF 50</span><em>100 g</em></li><li><span>1 × Liquid Foundation</span><em>shade selected at checkout</em></li><li><span>1 × Anti-Shine Powder</span><em>shade selected at checkout</em></li></ul>
+            <div class="buyrow"><div class="prices" data-tiered><span class="tiernote">With <span class="tn">Professional Base</span> foundation</span><span class="mrp">MRP <s class="m" data-pb="₹4,295" data-pg="₹4,895">₹4,295</s> · 15% off</span><span class="now" data-pb="₹3,651" data-pg="₹4,161">₹3,651</span></div><a class="cart mag" data-buy="KIT-CAMPUS" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a></div>
+          </div>
+        </article>
+        <article class="kit" data-reveal>
+          <div class="shot" aria-hidden="true"><span class="letter">E</span><span class="off">15%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:38%;left:0.0%;z-index:8;--fan:-4.5"><img src="img/sun.webp" alt="" style="width:38%;left:20.7%;z-index:9;--fan:-1.5"><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:38%;left:41.3%;z-index:10;--fan:1.5"><img src="img/spray.webp" alt="" style="width:38%;left:62.0%;z-index:9;--fan:4.5"></div>
+          <div class="body">
+            <div class="tags"><span>Best for beginners</span><span>Complete routine</span><span>First-time buyers</span></div>
+            <h3>Everyday Beginner</h3>
+            <p class="desc">Your first complete base routine: moisturise, protect, cover, set. Nothing skipped, nothing wasted.</p>
+            <ul aria-label="What's inside"><li><span>1 × Moisturiser</span><em>100 g</em></li><li><span>1 × Sunscreen SPF 50</span><em>100 g</em></li><li><span>1 × Liquid Foundation</span><em>shade selected at checkout</em></li><li><span>1 × Setting Spray</span><em>100 ml</em></li></ul>
+            <div class="buyrow"><div class="prices" data-tiered><span class="tiernote">With <span class="tn">Professional Base</span> foundation</span><span class="mrp">MRP <s class="m" data-pb="₹4,700" data-pg="₹5,300">₹4,700</s> · 15% off</span><span class="now" data-pb="₹3,995" data-pg="₹4,505">₹3,995</span></div><a class="cart mag" data-buy="KIT-EVERYDAY" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a></div>
+          </div>
+        </article>
+        <article class="kit" data-reveal>
+          <div class="shot" aria-hidden="true"><span class="letter">F</span><span class="off">20%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:34%;left:0.0%;z-index:8;--fan:-6.0"><img src="img/sun.webp" alt="" style="width:34%;left:16.5%;z-index:9;--fan:-3.0"><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:34%;left:33.0%;z-index:10;--fan:0.0"><img src="img/cc-angle.webp" alt="" style="width:34%;left:49.5%;z-index:9;--fan:3.0"><img src="img/spray.webp" alt="" style="width:34%;left:66.0%;z-index:8;--fan:6.0"></div>
+          <div class="body">
+            <div class="tags"><span>For pros</span><span>Event-ready</span><span>Full coverage</span><span>Bridal & party</span></div>
+            <h3>Professional (Event)</h3>
+            <p class="desc">Colour correction, full coverage and hold. Built for events where the makeup has to last from ceremony to after-party.</p>
+            <ul aria-label="What's inside"><li><span>1 × Moisturiser</span><em>100 g</em></li><li><span>1 × Sunscreen SPF 50</span><em>100 g</em></li><li><span>1 × Liquid Foundation</span><em>shade selected at checkout</em></li><li><span>1 × Colour Corrector Palette</span><em>6 × 4 g</em></li><li><span>1 × Setting Spray</span><em>100 ml</em></li></ul>
+            <div class="buyrow"><div class="prices" data-tiered><span class="tiernote">With <span class="tn">Professional Base</span> foundation</span><span class="mrp">MRP <s class="m" data-pb="₹6,650" data-pg="₹7,250">₹6,650</s> · 20% off</span><span class="now" data-pb="₹5,320" data-pg="₹5,800">₹5,320</span></div><a class="cart mag" data-buy="KIT-EVENT" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. YOUR SHADE EXISTS -->
+  <section class="statement sec-dark" aria-labelledby="stateH">
+    <div class="wrap">
+      <p class="label" style="color:var(--gold)">Professional grade. For every skin tone.</p>
+      <h2 id="stateH" style="margin-top:22px"><span class="st-line">Your shade</span><br><span class="st-line o">exists.</span></h2>
+      <div class="statement-grid">
+        <div>
+          <p><b style="color:var(--paper);font-weight:600">8 shades. Two formulations. One standard.</b> The original Professional Base, and the advanced Pro Glow with enhanced luminosity. Every shade is engineered for Indian undertones.</p>
+        </div>
+        <div><a class="btn btn-solid mag" href="#shades" data-cursor="Shades">Find your shade <span class="arr">→</span></a></div>
+      </div>
+      <figure class="lineup" data-reveal>
+        <figcaption><b>Fair neutral to deep warm</b><span class="label">8 foundation shades</span></figcaption>
+        <img src="img/lineup.webp" width="1440" height="668" alt="All eight Chullan foundation shades in a row, from the five light Pro Glow bottles to the three deep Professional Base bottles" loading="lazy">
+        <div class="tiers-legend label"><span>Pro Glow · 5 shades · ₹1,800</span><span>Professional Base · 3 shades · ₹1,200</span></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 7. SHADE STUDIO (unchanged) -->
+  <section class="shades sec-dark" id="shades" aria-labelledby="shadesH" style="padding-top:clamp(80px,9vw,130px)">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="shadesH">Shade <span class="serif">studio</span></h2>
+        <p>Test along your jawline in natural daylight. The right shade disappears into the skin without a visible line.</p>
+      </div>
+      <div class="shade-grid">
+        <div class="plate">
+          <div class="corner label"><span id="plateKind">Pro Glow</span><span id="plateSize">30 ml / 1 fl oz</span></div>
+          <img id="plateImg" src="img/f-c2w1.webp" alt="Chullan Liquid Foundation in Cashew (C2W1)">
+          <div class="tagline"><b id="plateName">Cashew</b><span class="label" id="plateCode">C2W1</span></div>
+        </div>
+        <div class="shade-ui">
+          <div class="tabs label" role="tablist" aria-label="Product">
+            <button role="tab" aria-selected="true" data-tab="F">Foundation</button>
+            <button role="tab" aria-selected="false" data-tab="C">Concealer</button>
+            <button role="tab" aria-selected="false" data-tab="P">Powder</button>
+          </div>
+          <div class="tier" id="tier" role="group" aria-label="Foundation tier">
+            <button aria-pressed="true" data-tier="G">Pro Glow</button>
+            <button aria-pressed="false" data-tier="B">Professional Base</button>
+          </div>
+          <h3 id="shadeTitle">Pro Glow</h3>
+          <p class="copy" id="shadeCopy">Advanced formulation with enhanced luminosity for fair to medium Indian skin tones. Same flawless coverage, elevated glow.</p>
+          <div class="swatches" id="swatches" role="group" aria-label="Shades"></div>
+          <dl class="spec">
+            <dt>Undertone</dt><dd id="specTone">Neutral</dd>
+            <dt>Finish</dt><dd id="specFinish">Natural, lit-from-within</dd>
+            <dt>Tested</dt><dd id="specTest">Stability at 40°C</dd>
+          </dl>
+          <div class="shade-buy">
+            <span class="price" id="shadePrice">₹1,800</span>
+            <a class="btn btn-solid mag" id="shadeBuy" data-buy="FND-C2W1" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Buy <span id="shadeBuyName">Cashew</span> <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. COLOUR CORRECTOR -->
+  <section class="cc sec-light" id="corrector" aria-labelledby="ccH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="ccH">Colour <span class="serif">corrector</span></h2>
+        <p>Creamy formula that blends precisely and sits under makeup without shifting. Watch the problem disappear before any makeup goes on.</p>
+      </div>
+      <div class="cc-grid">
+        <div class="cc-photo" data-reveal>
+          <img src="img/cc-open.webp" width="1000" height="1000" alt="Chullan Colour Corrector palette open, showing six pans" loading="lazy">
+          <span class="ring" id="ccRing"></span>
+        </div>
+        <div>
+          <ul class="cc-list" id="ccList"><li><button aria-expanded="true" data-pan="72.8,79.6" style="--c:#e8902c"><span class="chip"></span><span><b>Light Orange</b><span class="label" style="display:block;color:var(--mute-l);font-size:10.5px;margin-top:4px">Dark circles, lighter skin</span><small>Lighter Indian skin tones respond best to the softer peach-orange. A thin layer under the eye, blended before concealer.</small></span><span class="plus">+</span></button></li><li><button aria-expanded="false" data-pan="27.8,66.8" style="--c:#c4562a"><span class="chip"></span><span><b>Dark Orange</b><span class="label" style="display:block;color:var(--mute-l);font-size:10.5px;margin-top:4px">Dark circles, medium to deep</span><small>For medium to deep Indian skin tones. Covers dark circles, dark spots and pigmentation spots.</small></span><span class="plus">+</span></button></li><li><button aria-expanded="false" data-pan="49.8,66.8" style="--c:#9a5a32"><span class="chip"></span><span><b>Burnt Orange</b><span class="label" style="display:block;color:var(--mute-l);font-size:10.5px;margin-top:4px">Pigmentation & contour, deep shade</span><small>Deeper Indian skin tones need a stronger orange to cancel deep dark circles and pigmentation. Also used to sculpt and contour.</small></span><span class="plus">+</span></button></li><li><button aria-expanded="false" data-pan="71.6,66.8" style="--c:#8fae5e"><span class="chip"></span><span><b>Green</b><span class="label" style="display:block;color:var(--mute-l);font-size:10.5px;margin-top:4px">Redness & blemishes</span><small>Neutralises redness, acne scars, pimples and flushed skin. Pat on the spot only.</small></span><span class="plus">+</span></button></li><li><button aria-expanded="false" data-pan="27.4,79.6" style="--c:#e3be4a"><span class="chip"></span><span><b>Yellow</b><span class="label" style="display:block;color:var(--mute-l);font-size:10.5px;margin-top:4px">Sallow or uneven patches</span><small>Evens out sallow or uneven areas before coverage.</small></span><span class="plus">+</span></button></li><li><button aria-expanded="false" data-pan="50,79.6" style="--c:#7c73e0"><span class="chip"></span><span><b>Purple</b><span class="label" style="display:block;color:var(--mute-l);font-size:10.5px;margin-top:4px">Neutralises yellow skin</span><small>Brightens sallow, yellowish areas for a fresher tone.</small></span><span class="plus">+</span></button></li></ul>
+          <p class="cc-note">Less is more. A thin application to the concerned area only corrects effectively; over-application creates texture. Layer concealer or foundation over the top for a seamless finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. THE ESSENTIALS -->
+  <section class="edit sec-light" id="collection" aria-labelledby="editH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="editH"><span class="kick label">The complete base</span>The <span class="serif">essentials</span></h2>
+        <p>Every product works on its own and can be bought individually. Start with what you need and build from there.</p>
+      </div>
+      <div class="prod-grid">
+        <a class="card" data-buy="MOIST" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop" data-reveal>
+          <div class="ph"><span class="step-tag label">Prep</span><img class="main" src="img/moist.webp" alt="Chullan Moisturiser" loading="lazy"><img class="alt" src="img/moist-back.webp" alt="" loading="lazy"><span class="quick">Shop <span>→</span></span></div>
+          <div class="info"><h3>Moisturiser</h3><span class="price">₹1,100</span><p>The first layer</p><div class="meta"><span class="label">100 g</span></div></div>
+        </a>
+        <a class="card" data-buy="SUN50" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop" data-reveal>
+          <div class="ph"><span class="step-tag label">Protect</span><img class="main" src="img/sun.webp" alt="Chullan Sunscreen SPF 50" loading="lazy"><img class="alt" src="img/sun-back.webp" alt="" loading="lazy"><span class="quick">Shop <span>→</span></span></div>
+          <div class="info"><h3>Sunscreen SPF 50</h3><span class="price">₹1,200</span><p>Invisible protection</p><div class="meta"><span class="label">100 g · SPF 50</span></div></div>
+        </a>
+        <a class="card" data-buy="PRIMER" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop" data-reveal>
+          <div class="ph"><span class="step-tag label">Prime</span><img class="main" src="img/primer.webp" alt="Chullan Hydrating Primer" loading="lazy"><img class="alt" src="img/primer-back.webp" alt="" loading="lazy"><span class="quick">Shop <span>→</span></span></div>
+          <div class="info"><h3>Hydrating Primer</h3><span class="price">₹1,500</span><p>Smoother skin before makeup</p><div class="meta"><span class="label">30 g</span></div></div>
+        </a>
+        <a class="card" data-buy="CORR" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop" data-reveal>
+          <div class="ph"><span class="step-tag label">Correct</span><img class="main" src="img/cc-angle.webp" alt="Chullan Colour Corrector Palette" loading="lazy"><img class="alt" src="img/cc-box.webp" alt="" loading="lazy"><span class="quick">Shop <span>→</span></span></div>
+          <div class="info"><h3>Colour Corrector</h3><span class="price">₹1,950</span><p>Dark circles gone</p><div class="meta"><span class="label">6 × 4 g</span></div></div>
+        </a>
+        <a class="card" data-buy="CONC" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop" data-reveal>
+          <div class="ph"><span class="step-tag label">Conceal</span><img class="main" src="img/conc-trio.webp" alt="Chullan Concealer in three shades" loading="lazy"><img class="alt" src="img/conc-3.webp" alt="" loading="lazy"><span class="quick">Shop <span>→</span></span></div>
+          <div class="info"><h3>Concealer</h3><span class="price">₹1,200</span><p>Precision where it matters</p><div class="meta"><span class="label">30 g · 3 shades</span><span class="dots"><i style="--c:#b8742f"></i><i style="--c:#9c6136"></i><i style="--c:#6d3519"></i></span></div></div>
+        </a>
+        <a class="card" href="#shades" data-cursor="Shades" data-reveal>
+          <div class="ph"><span class="step-tag label">Build</span><img class="main" src="img/f-c1w1.webp" alt="Chullan Liquid Foundation" loading="lazy"><img class="alt" src="img/pb-espresso.webp" alt="" loading="lazy"><span class="quick">Find your shade <span>→</span></span></div>
+          <div class="info"><h3>Liquid Foundation</h3><span class="price">From ₹1,200</span><p>Eight shades. Two formulations.</p><div class="meta"><span class="label">30 ml · 8 shades</span><span class="dots"><i style="--c:#d9b48c"></i><i style="--c:#d1a07a"></i><i style="--c:#c99466"></i><i style="--c:#c08b5c"></i><i style="--c:#b98252"></i><i style="--c:#b26f31"></i><i style="--c:#9c6136"></i><i style="--c:#6d3519"></i></span></div></div>
+        </a>
+        <a class="card" data-buy="PWD" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop" data-reveal>
+          <div class="ph"><span class="step-tag label">Control</span><img class="main" src="img/powder.webp" alt="Chullan Anti-Shine Powder" loading="lazy"><img class="alt" src="img/powder-rose.webp" alt="" loading="lazy"><span class="quick">Shop <span>→</span></span></div>
+          <div class="info"><h3>Anti-Shine Powder</h3><span class="price">₹795</span><p>Shine gone. Base locked.</p><div class="meta"><span class="label">10 g · 4 shades</span><span class="dots"><i style="--c:#f3f1ee"></i><i style="--c:#e6cdb8"></i><i style="--c:#ebc9cd"></i><i style="--c:#ecd9a2"></i></span></div></div>
+        </a>
+        <a class="card" data-buy="SPRAY" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop" data-reveal>
+          <div class="ph"><span class="step-tag label">Set</span><img class="main" src="img/spray.webp" alt="Chullan Setting Spray" loading="lazy"><img class="alt" src="img/spray-back.webp" alt="" loading="lazy"><span class="quick">Shop <span>→</span></span></div>
+          <div class="info"><h3>Setting Spray</h3><span class="price">₹1,200</span><p>Lasting hold. One spray.</p><div class="meta"><span class="label">100 ml · Alcohol-free</span></div></div>
+        </a>
+      </div>
+      <div class="edit-foot">
+        <div>
+          <h3>Eight products. One sequence. <span class="serif" style="color:var(--gold-deep)">From first prep to final set.</span></h3>
+          <p>Professional makeup formulated in the USA for Indian skin tones. Each product is designed to work with the next. A complete system that performs as one layer, not eight separate products.</p>
+        </div>
+        <a class="btn btn-ink mag" data-buy="ALL" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Shop all 8 <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. WHY CHULLAN -->
+  <section class="why sec-dark" id="why" aria-labelledby="whyH">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="whyH"><span class="kick label">Why Chullan</span>Built different.<br><span class="serif">Built for</span> you.</h2>
+      </div>
+      <div class="why-grid">
+        <article class="pillar" data-reveal><span class="n">01</span><h3>Formulated for Indian skin tones</h3><p>Not a global formula with an Indian shade range bolted on. Every product is formulated in the USA specifically for the undertones, pigmentation depths and climate conditions that Indian skin faces daily.</p></article>
+        <article class="pillar" data-reveal><span class="n">02</span><h3>Professional salon grade</h3><p>The same products used by salon professionals and bridal makeup artists. Stability tested at 40°C, formulated to perform in real Indian working temperatures.</p></article>
+        <article class="pillar" data-reveal><span class="n">03</span><h3>Tested and documented</h3><p>Dermatologically tested moisturiser and sunscreen, classified Non-Irritant under IS 4011:2018. SPF 50 verified by UV transmittance analysis. Paraben-free and mineral oil-free across all 8 products.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. JOIN THE LIST -->
+  <section class="join" aria-labelledby="joinH">
+    <div class="final-mq" aria-hidden="true">
+      <span>Join the list</span><span class="o">Join the list</span><span>Join the list</span><span class="o">Join the list</span>
+    </div>
+    <div class="wrap">
+      <div>
+        <h2 id="joinH" class="sr">Join the list</h2>
+        <p class="lead">Ten percent off your first order, plus first access to restocks and new drops. No more than one email a month.</p>
+      </div>
+      <form id="joinForm" novalidate>
+        <label class="label" for="joinEmail">Email address</label>
+        <div class="row">
+          <input id="joinEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe <span class="arr">→</span></button>
+        </div>
+        <small>Unsubscribe any time.</small>
+        <p class="msg" id="joinMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 12. THE STANDARDS (unchanged, minus cruelty-free and sulfate-free) -->
+  <section class="standards sec-dark" aria-labelledby="stdH">
+    <div class="wrap std-grid">
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs><text><textPath href="#circ">FORMULATED IN THE USA ★ PARABEN FREE ★ MINERAL OIL FREE ★ SALON GRADE ★</textPath></text></svg>
+        <div class="core"><div><b>40°C</b><span class="label">Stability<br>tested</span></div></div>
+      </div>
+      <div class="std-copy">
+        <p class="label" style="color:var(--gold)">The standards</p>
+        <h2 id="stdH">Tested. <span class="serif">Certified.</span> Documented.</h2>
+        <p>The foundation range is stability tested at 40°C and conforms to IS 14318:1996. The Moisturiser and Sunscreen are dermatologically tested under IS 4011:2018 guidelines and classified Non-Irritant. The SPF 50 rating is verified through UV transmittance analysis.</p>
+        <p class="punch">Not label claims. Documented.</p>
+        <div class="creds">
+          <div class="cred" data-reveal><b><span data-count="40">40</span>°C</b><span class="label">Stability tested</span></div>
+          <div class="cred" data-reveal><b>IS 4011</b><span class="label">Dermatologically tested</span></div>
+          <div class="cred" data-reveal><b>SPF 50.8</b><span class="label">UV transmittance verified</span></div>
+          <div class="cred" data-reveal><b><span data-count="3">3</span> yrs</b><span class="label">Shelf life</span></div>
+        </div>
+        <div class="badges label"><span>Paraben free</span><span>Mineral oil free</span><span>Formulated in the USA · Made in India</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="sec-dark">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Back to top">
+      <svg class="frame" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100" vector-effect="non-scaling-stroke"/></svg>
+      <span class="word">CHULLAN<sup>®</sup></span>
+      <span class="tag">★★★ MAKE UP ★★★</span>
+      <span class="tag">PROFESSIONAL</span>
+    </a>
+    <nav aria-label="Footer">
+      <a href="#range">Collection</a><a href="#kits">Kits</a><a href="#shades">Shades</a><a href="#why">Why Chullan</a><a data-buy="ALL" href="https://chullan.aistore.bz/" target="_blank" rel="noopener">Store</a>
+    </nav>
+    <span>© 2026 Chullan Make Up Professional · care@chullancosmetics.com</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Chullan Make Up Professional","legalName":"NOWGENN Cosmetics Pvt Ltd","url":"https://chullancosmetics.com","email":"care@chullancosmetics.com","telephone":"+91 7994131777","brand":{"@type":"Brand","name":"Chullan"}}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ===== STORE LINKS =====
+   When the products are live on the AI Store, paste each product's link here
+   (e.g. "FND-C1W1": "https://chullan.aistore.bz/product/<id>").
+   Anything left blank opens the store home page. */
+var STORE="https://chullan.aistore.bz/";
+var BUY={
+  "ALL":"", "FND":"", "KIT-QUICK":"", "KIT-MEN":"", "KIT-MENCOV":"", "KIT-CAMPUS":"", "KIT-EVERYDAY":"", "KIT-EVENT":"", "MOIST":"", "SUN50":"", "PRIMER":"", "CORR":"", "CONC":"", "PWD":"", "SPRAY":"",
+  "FND-C1W1":"", "FND-C2W1":"", "FND-C2W2":"", "FND-C3W1":"", "FND-C3W2":"",
+  "FND-FC01A":"", "FND-FC01C":"", "FND-FC01E":"",
+  "CONC-FC01A":"", "CONC-FC01C":"", "CONC-FC01E":"",
+  "PWD-WHITE":"", "PWD-BEIGE":"", "PWD-BABYPINK":"", "PWD-BANANA":""
+};
+function buyUrl(k){return (BUY[k]||"").trim()||STORE}
+document.querySelectorAll('[data-buy]').forEach(function(a){a.href=buyUrl(a.dataset.buy)});
+
+/* ===== SHADE DATA ===== */
+var SHADES={
+  G:{tab:'F',title:'Pro Glow',kind:'Pro Glow',price:'₹1,800',size:'30 ml / 1 fl oz',tone:'Neutral',finish:'Natural, lit-from-within',test:'Stability at 40°C',
+     copy:'Advanced formulation with enhanced luminosity for fair to medium Indian skin tones. Same flawless coverage, elevated glow.',name:'Liquid Foundation',
+     list:[['Bisque','C1W1','#d9b48c','img/f-c1w1.webp'],['Cashew','C2W1','#d1a07a','img/f-c2w1.webp'],['Almond','C2W2','#c99466','img/f-c2w2.webp'],['Fawn','C3W1','#c08b5c','img/f-c3w1.webp'],['Hazel','C3W2','#b98252','img/f-c3w2.webp']],sku:'FND-',start:1},
+  B:{tab:'F',title:'Professional Base',kind:'Professional Base',price:'₹1,200',size:'30 ml / 1 fl oz',tone:'Warm',finish:'Natural, full coverage',test:'Stability at 40°C',
+     copy:'The original Chullan foundation. Flawless coverage for deep warm Indian skin tones. Holds through long sessions and humid conditions.',name:'Liquid Foundation',
+     list:[['Amber','FC01A','#b26f31','img/pb-amber.webp'],['Cocoa','FC01C','#9c6136','img/pb-cocoa.webp'],['Espresso','FC01E','#6d3519','img/pb-espresso.webp']],sku:'FND-',start:1},
+  C:{tab:'C',title:'Concealer',kind:'Concealer',price:'₹1,200',size:'30 ml / 1 fl oz',tone:'Warm',finish:'Full coverage, crease-free',test:'Matched to Professional Base',
+     copy:'Full-coverage liquid concealer for dark circles, blemishes and pigmentation. Choose your foundation shade for invisible correction, or one step lighter to brighten.',name:'Concealer',
+     list:[['Amber','FC01A','#b8742f','img/conc-trio.webp'],['Cocoa','FC01C','#9c6136','img/conc-trio.webp'],['Espresso','FC01E','#6d3519','img/conc-trio.webp']],sku:'CONC-',start:0},
+  P:{tab:'P',title:'Anti-Shine Powder',kind:'Anti-Shine Powder',price:'₹795',size:'10 g · loose',tone:'Matched to Indian undertones',finish:'Smooth matte',test:'Talc-based, built-in sifter',
+     copy:'Shine disappears, makeup stays. White gives a translucent matte set on any tone, Beige suits most Indian skin, Baby Pink brightens fair to medium, Banana cancels purple and blue undertones.',name:'Anti-Shine Powder',
+     list:[['White','WHITE','#f3f1ee','img/powder.webp'],['Beige','BEIGE','#e6cdb8','img/powder-peach.webp'],['Baby Pink','BABYPINK','#ebc9cd','img/powder-rose.webp'],['Banana','BANANA','#ecd9a2','img/powder-top.webp']],sku:'PWD-',start:0}
+};
+
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia('(pointer: fine)').matches;
+  var hasGsap=!!(window.gsap&&window.ScrollTrigger);
+  root.classList.add('js');
+
+  /* ---------- Smooth scroll ---------- */
+  var lenis=null;
+  if(window.Lenis&&!reduce){
+    try{
+      lenis=new Lenis({lerp:.1,smoothWheel:true});
+      if(hasGsap){lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);}
+      else{(function raf(t){lenis.raf(t);requestAnimationFrame(raf)})(0);}
+    }catch(e){lenis=null}
+  }
+  function goTo(hash){
+    var el=document.querySelector(hash);if(!el)return;
+    if(lenis){lenis.scrollTo(el,{offset:hash==='#top'?0:-100,duration:1.4})}else{el.scrollIntoView({behavior:reduce?'auto':'smooth'})}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){var h=a.getAttribute('href');if(h.length>1){e.preventDefault();closeMenu();goTo(h)}});
+  });
+
+  /* ---------- Header ---------- */
+  var hdr=document.getElementById('hdr'),lastY=0;
+  function onScroll(){
+    var y=window.scrollY||root.scrollTop;
+    hdr.classList.toggle('solid',y>40);
+    if(!document.body.classList.contains('menu-open'))hdr.classList.toggle('hide',y>lastY&&y>400);
+    lastY=y;
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* ---------- Menu ---------- */
+  var menuBtn=document.getElementById('menuBtn');
+  function closeMenu(){document.body.classList.remove('menu-open');menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Open menu');if(lenis)lenis.start()}
+  menuBtn.addEventListener('click',function(){
+    var open=!document.body.classList.contains('menu-open');
+    document.body.classList.toggle('menu-open',open);
+    menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');
+    if(lenis){open?lenis.stop():lenis.start()}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+
+  /* ---------- Powder dust (canvas) ---------- */
+  (function dust(){
+    var c=document.getElementById('dust');if(!c||!c.getContext)return;
+    var ctx=c.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),W=0,H=0,P=[],mx=-9999,my=-9999,running=true,hero=c.parentElement;
+    function make(init){
+      var narrow=W<760;
+      var cx=narrow?W*.5:W*.68,cy=narrow?H*.26:H*.52,spread=narrow?W*.6:W*.3;
+      var a=Math.random()*Math.PI*2,d=Math.pow(Math.random(),.6)*spread;
+      return{x:cx+Math.cos(a)*d*1.3,y:init?cy+Math.sin(a)*d*.8:H+10,r:Math.random()*1.5+.25,
+        vx:(Math.random()-.35)*.18,vy:-(Math.random()*.25+.05),a:Math.random()*.55+.1,t:Math.random()*1000,tw:Math.random()*.02+.005};
+    }
+    function size(){
+      var r=hero.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+      var n=Math.round(Math.min(420,W*H/2600));P=[];for(var i=0;i<n;i++)P.push(make(true));
+    }
+    function frame(){
+      if(!running)return;
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<P.length;i++){
+        var p=P[i];p.t+=1;
+        var dx=p.x-mx,dy=p.y-my,dd=dx*dx+dy*dy;
+        if(dd<14000){var f=(14000-dd)/14000*.9;p.vx+=dx/Math.sqrt(dd+1)*f*.12;p.vy+=dy/Math.sqrt(dd+1)*f*.12}
+        p.vx*=.985;p.vy*=.985;p.vy-=.0015;
+        p.x+=p.vx+Math.sin(p.t*.01)*.12;p.y+=p.vy;
+        if(p.y<-10||p.x<-10||p.x>W+10){P[i]=make(false);continue}
+        var al=p.a*(.6+.4*Math.sin(p.t*p.tw));
+        ctx.beginPath();ctx.fillStyle='rgba(236,220,198,'+al.toFixed(3)+')';ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    }
+    size();
+    if(reduce){running=false;P.forEach(function(p){ctx.beginPath();ctx.fillStyle='rgba(236,220,198,'+p.a*.6+')';ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill()});return}
+    window.addEventListener('resize',size);
+    hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+    hero.addEventListener('pointerleave',function(){mx=my=-9999});
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!running){running=true;requestAnimationFrame(frame)}running=v}).observe(hero)}
+    requestAnimationFrame(frame);
+  })();
+
+  /* ---------- Shade studio ---------- */
+  var cur={set:'G',i:1};
+  var plateImg=document.getElementById('plateImg'),plateName=document.getElementById('plateName'),plateCode=document.getElementById('plateCode');
+  var swWrap=document.getElementById('swatches'),tierEl=document.getElementById('tier');
+  function setText(id,v){document.getElementById(id).textContent=v}
+  function showShade(i,animate){
+    var d=SHADES[cur.set],s=d.list[i];cur.i=i;
+    swWrap.querySelectorAll('.sw').forEach(function(b,k){b.setAttribute('aria-pressed',String(k===i))});
+    var apply=function(){plateImg.src=s[3];plateImg.alt='Chullan '+d.name+' in '+s[0]+(cur.set==='P'?'':' ('+s[1]+')');plateName.textContent=s[0];plateCode.textContent=cur.set==='P'?'10 g':s[1]};
+    var sku=d.sku+s[1];var buy=document.getElementById('shadeBuy');buy.dataset.buy=sku;buy.href=buyUrl(sku);setText('shadeBuyName',s[0]);
+    if(animate&&hasGsap&&!reduce){
+      var same=plateImg.getAttribute('src')===s[3];
+      var tl=gsap.timeline();
+      if(!same){tl.to(plateImg,{yPercent:-6,opacity:0,duration:.26,ease:'power2.in'}).add(apply).fromTo(plateImg,{yPercent:6,opacity:0},{yPercent:0,opacity:1,duration:.6,ease:'power3.out'})}
+      else{apply()}
+      tl.fromTo('#plateName',{yPercent:40,opacity:0},{yPercent:0,opacity:1,duration:.5,ease:'power3.out'},same?0:'<');
+    }else apply();
+  }
+  function buildSet(key,animate){
+    cur.set=key;var d=SHADES[key];
+    setText('shadeTitle',d.title);setText('shadeCopy',d.copy);setText('specTone',d.tone);setText('specFinish',d.finish);setText('specTest',d.test);
+    setText('shadePrice',d.price);setText('plateKind',d.kind);setText('plateSize',d.size);
+    swWrap.innerHTML='';
+    d.list.forEach(function(s,k){
+      var b=document.createElement('button');b.className='sw';b.setAttribute('aria-pressed','false');b.style.setProperty('--c',s[2]);
+      b.innerHTML='<span class="dot"></span><span class="label">'+s[0]+'</span>';
+      b.setAttribute('aria-label',s[0]+(key==='P'?'':' '+s[1]));
+      b.addEventListener('click',function(){showShade(k,true)});swWrap.appendChild(b);
+    });
+    tierEl.hidden=d.tab!=='F';
+    tierEl.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.tier===key))});
+    showShade(Math.min(d.start,d.list.length-1),animate);
+    if(animate&&hasGsap&&!reduce)gsap.from(swWrap.children,{y:14,opacity:0,stagger:.05,duration:.5,ease:'power3.out'});
+  }
+  document.querySelectorAll('.tabs button').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',String(x===t))});
+      buildSet(t.dataset.tab==='F'?'G':t.dataset.tab,true);
+    });
+  });
+  tierEl.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){buildSet(b.dataset.tier,true)})});
+  buildSet('G',false);
+
+  /* ---------- Colour corrector ---------- */
+  var ring=document.getElementById('ccRing'),ccBtns=document.querySelectorAll('#ccList button');
+  function selectCC(b){
+    ccBtns.forEach(function(x){x.setAttribute('aria-expanded',String(x===b))});
+    var p=b.dataset.pan.split(',');ring.style.left=p[0]+'%';ring.style.top=p[1]+'%';ring.classList.add('on');
+  }
+  ccBtns.forEach(function(b){b.addEventListener('click',function(){selectCC(b)});if(fine)b.addEventListener('mouseenter',function(){selectCC(b)})});
+  selectCC(ccBtns[0]);
+
+  /* ---------- FAQ: one open at a time ---------- */
+  var qas=document.querySelectorAll('.qa details');
+  qas.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)qas.forEach(function(o){if(o!==d)o.open=false});if(hasGsap&&d.open&&!reduce)gsap.from(d.querySelector('.ans p'),{y:-8,opacity:0,duration:.5,ease:'power3.out'})})});
+
+  /* ---------- Copy email ---------- */
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1800)};
+      var sel=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};
+      try{navigator.clipboard.writeText(b.dataset.copy).then(ok,sel)}catch(e){sel()}
+    });
+  });
+
+  /* ---------- Cursor, magnetic buttons, card tilt ---------- */
+  if(fine&&!reduce&&window.innerWidth>=900){
+    var curEl=document.querySelector('.cursor'),lbl=curEl.querySelector('span'),cx=-100,cy=-100,tx=-100,ty=-100;
+    window.addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY},{passive:true});
+    (function loop(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;curEl.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
+    document.addEventListener('mouseover',function(e){var el=e.target.closest('[data-cursor]');if(el){lbl.textContent=el.dataset.cursor;curEl.classList.add('big')}else curEl.classList.remove('big')});
+    document.querySelectorAll('.mag').forEach(function(el){
+      el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();var x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;el.style.transform='translate('+x*.18+'px,'+y*.28+'px)'});
+      el.addEventListener('mouseleave',function(){el.style.transition='transform .6s cubic-bezier(.2,.7,.1,1)';el.style.transform='';setTimeout(function(){el.style.transition=''},600)});
+    });
+    document.querySelectorAll('.card').forEach(function(card){
+      var ph=card.querySelector('.ph');
+      card.addEventListener('mousemove',function(e){var r=ph.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ph.style.transform='rotateY('+x*7+'deg) rotateX('+(-y*7)+'deg)'});
+      card.addEventListener('mouseleave',function(){ph.style.transform=''});
+    });
+  }
+
+  /* ---------- Manifesto words ---------- */
+  var man=document.getElementById('manifesto'),words=[];
+  if(man)(function split(node){
+    Array.prototype.slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        var frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function(w){
+          if(!w)return;
+          if(/^\s+$/.test(w)){frag.appendChild(document.createTextNode(w));return}
+          var s=document.createElement('span');s.className='w';s.textContent=w;frag.appendChild(s);words.push(s);
+        });
+        node.replaceChild(frag,n);
+      }else if(n.nodeType===1){split(n)}
+    });
+  })(man);
+
+  /* ---------- Routine stage ---------- */
+  var sets=document.querySelectorAll('.stage .set'),steps=document.querySelectorAll('.step'),proc=document.querySelectorAll('#process a');
+  var names=['Prep','Protect','Prime','Correct','Conceal','Build','Control','Set'];
+  function setStep(i){
+    sets.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    proc.forEach(function(a,k){a.classList.toggle('on',k===i)});
+    setText('stepNo','Step '+String(i+1).padStart(2,'0')+' / 08');setText('stepName',names[i]);
+    document.getElementById('prog').style.transform='scaleX('+((i+1)/8)+')';
+  }
+
+  if(!hasGsap){
+    words.forEach(function(w){w.style.color='inherit'});
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setStep([].indexOf.call(steps,e.target))})},{rootMargin:'-45% 0px -45% 0px'});
+      steps.forEach(function(s){io.observe(s)});
+    }
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if(!reduce){
+    var tl=gsap.timeline({defaults:{ease:'expo.out'}});
+    tl.from('#heroImg',{scale:1.18,duration:2.4,ease:'power3.out'},0)
+      .from('.hero-media',{clipPath:'inset(0 0 0 100%)',duration:1.6,ease:'expo.inOut'},0)
+      .from('.hdr .logo rect',{strokeDashoffset:100,duration:1.4,ease:'power2.inOut'},.2)
+      .from('.hdr .logo .word,.hdr .logo .tag',{opacity:0,y:6,stagger:.08,duration:.8},.5)
+      .from('.hero-title .ln>span',{yPercent:110,duration:1.3,stagger:.1},.35)
+      .from('[data-hero]',{y:24,opacity:0,stagger:.08,duration:1.1},.85)
+      .from('.nav a,.hdr-cta',{opacity:0,y:-10,stagger:.05,duration:.8},.9);
+
+    gsap.to('#heroImg',{yPercent:10,scale:1.06,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('.hero .wrap',{yPercent:-10,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'center top',end:'bottom top',scrub:true}});
+
+    var skew=gsap.quickTo('#tickerSkew','skewX',{duration:.5,ease:'power3'});
+    ScrollTrigger.create({onUpdate:function(self){skew(gsap.utils.clamp(-12,12,self.getVelocity()/-260))}});
+
+    gsap.utils.toArray('.sec-head h2,.std-copy h2').forEach(function(h){
+      gsap.from(h,{yPercent:30,opacity:0,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}});
+    });
+    gsap.utils.toArray('[data-reveal]').forEach(function(el){
+      gsap.from(el,{y:44,opacity:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}});
+    });
+    gsap.utils.toArray('.step h3').forEach(function(h){
+      gsap.from(h,{yPercent:40,opacity:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 85%',once:true}});
+    });
+    /* statement lines slide in from opposite sides */
+    gsap.from('.statement .st-line:not(.o)',{xPercent:-12,opacity:0,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'.statement h2',start:'top 85%',once:true}});
+    gsap.from('.statement .st-line.o',{xPercent:12,opacity:0,duration:1.4,ease:'expo.out',delay:.1,scrollTrigger:{trigger:'.statement h2',start:'top 85%',once:true}});
+    gsap.utils.toArray('.ess li').forEach(function(li,i){
+      gsap.from(li,{x:-20,opacity:0,duration:.8,delay:i*.06,ease:'power3.out',scrollTrigger:{trigger:'.ess',start:'top 85%',once:true}});
+    });
+
+    gsap.to('#skinPhoto img',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'#skinPhoto',start:'top bottom',end:'bottom top',scrub:true}});
+    gsap.from('#skinPhoto',{clipPath:'inset(18% 0 18% 0)',duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'#skinPhoto',start:'top 80%',once:true}});
+    gsap.fromTo('.lineup img',{scale:1.08,xPercent:-2},{scale:1,xPercent:2,ease:'none',scrollTrigger:{trigger:'.lineup',start:'top bottom',end:'bottom top',scrub:true}});
+  }
+
+  if(reduce){words.forEach(function(w){w.style.color='inherit'})}
+  else{
+    var ink=getComputedStyle(root).getPropertyValue('--ink').trim()||'#0e0d0c';
+    if(man)gsap.to(words,{color:ink,stagger:.1,ease:'none',scrollTrigger:{trigger:man,start:'top 78%',end:'bottom 45%',scrub:.6}});
+  }
+
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var n=+el.dataset.count,o={v:0};if(reduce)return;
+    el.textContent='0';
+    ScrollTrigger.create({trigger:el,start:'top 92%',once:true,onEnter:function(){gsap.to(o,{v:n,duration:1.6,ease:'power2.out',onUpdate:function(){el.textContent=Math.round(o.v)}})}});
+  });
+
+  steps.forEach(function(s,i){
+    ScrollTrigger.create({trigger:s,start:'top 55%',end:'bottom 55%',onToggle:function(self){if(self.isActive)setStep(i)}});
+  });
+
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+
+/* ===== v3: kits tier toggle + email list ===== */
+(function(){
+  var btns=document.querySelectorAll('#kitTier button');
+  function setTier(t){
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.t===t))});
+    document.querySelectorAll('[data-tiered]').forEach(function(p){
+      p.querySelector('.tn').textContent=t==='pg'?'Pro Glow':'Professional Base';
+      p.querySelectorAll('[data-pb]').forEach(function(el){el.textContent=el.dataset[t]});
+    });
+    document.querySelectorAll('img.kit-f').forEach(function(im){im.src=im.dataset[t]});
+    if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches)gsap.fromTo('.kit [data-tiered] .now',{yPercent:30,opacity:0},{yPercent:0,opacity:1,duration:.5,stagger:.04,ease:'power3.out'});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){setTier(b.dataset.t)})});
+
+  /* Email signup. Paste a webhook URL (e.g. AI Store Automation > Custom Webhook) to collect emails. */
+  var SIGNUP_WEBHOOK="";
+  var f=document.getElementById('joinForm'),msg=document.getElementById('joinMsg'),inp=document.getElementById('joinEmail');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=inp.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){msg.textContent='Enter a valid email address, like you@example.com.';inp.focus();return}
+    if(!SIGNUP_WEBHOOK){msg.textContent='Email signup is not connected yet. Please check back soon.';return}
+    msg.textContent='Subscribing…';
+    fetch(SIGNUP_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:v,source:'chullan-landing'})})
+      .then(function(r){if(!r.ok)throw 0;msg.textContent='Subscribed. Your 10% code is on its way.';f.reset()})
+      .catch(function(){msg.textContent='Could not subscribe right now. Please try again in a minute.'});
+  });
+})();
+</script>
+
+</body>
+</html>
