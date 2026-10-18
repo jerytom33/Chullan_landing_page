@@ -83,7 +83,7 @@ p{margin:0}
 .hdr.solid .hdr-main{background:rgba(14,13,12,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-d)}
 .hdr .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:68px;gap:16px}
 .nav{display:flex;gap:clamp(16px,2.2vw,34px)}
-.nav a{position:relative;padding-block:6px}
+.nav a{position:relative;padding-block:6px;white-space:nowrap}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
 .nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .hdr-cta{justify-self:end;display:flex;align-items:center;gap:14px}
@@ -225,6 +225,7 @@ p{margin:0}
 /* ---------- Shade studio ---------- */
 .shades{padding-block:clamp(96px,12vw,170px)}
 .shade-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.shades .sec-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:clamp(32px,6vw,96px)}
 .plate{position:relative;aspect-ratio:1/1;background:var(--paper);overflow:hidden}
 .plate img{position:absolute;left:6%;top:13%;width:88%;height:66%;object-fit:contain;mix-blend-mode:multiply}
 .plate .tagline{position:absolute;left:22px;bottom:18px;right:22px;color:var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:16px;z-index:2}
@@ -361,7 +362,8 @@ p{margin:0}
 /* ---------- Footer ---------- */
 footer{padding-block:48px calc(36px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line-d)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;color:var(--mute-d);font-size:14px}
-footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer nav{display:flex;flex-wrap:wrap;gap:4px 22px}
+footer nav a{padding-block:10px}
 footer nav a:hover{color:var(--paper)}
 
 /* ---------- Cursor ---------- */
@@ -372,6 +374,22 @@ footer nav a:hover{color:var(--paper)}
 .cursor.big .ring span{opacity:1}
 @media (pointer:fine) and (min-width:900px){.cursor{display:block}}
 
+/* ---------- Touch: carousel, peek states, press ---------- */
+.card.peek .ph img.main{opacity:0;transform:scale(.97)}
+.card.peek .ph img.alt{opacity:1;transform:scale(1)}
+.kit.lift .shot img{transform:translateY(-3%)}
+.kit.lift .shot img:nth-child(2n){transition-delay:.06s}
+.kit-dots{display:none}
+.plate{touch-action:pan-y}
+.swipe-hint{display:none}
+@media (hover:none){
+  a,button,.card,.kit{-webkit-tap-highlight-color:transparent}
+}
+@media (hover:none) and (max-width:900px){
+  .swipe-hint{display:block;text-align:center;margin-top:-6px;color:var(--mute-d);pointer-events:none;transition:opacity .6s}
+  .swipe-hint.gone{opacity:0}
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width:1180px){
   .prod-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -379,12 +397,14 @@ footer nav a:hover{color:var(--paper)}
   .creds{grid-template-columns:repeat(2,minmax(0,1fr))}
   .process{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
-@media (max-width:900px){
+@media (max-width:1080px){
   .nav,.hdr-cta .btn{display:none}
   .menu-btn{display:block}
   .hdr .wrap{grid-template-columns:auto 1fr auto;height:60px}
   .hdr .logo{grid-column:1}
   .hdr-cta{grid-column:3}
+}
+@media (max-width:900px){
   .formula .wrap,.faq-grid{grid-template-columns:minmax(0,1fr)}
   .routine-grid{grid-template-columns:minmax(0,1fr)}
   .stage-wrap{display:none}
@@ -392,7 +412,7 @@ footer nav a:hover{color:var(--paper)}
   .step{min-height:0;padding-block:40px}
   .step .mob-shot{display:flex;align-items:flex-end;justify-content:center;gap:5%;position:relative;aspect-ratio:4/3;background:var(--paper);overflow:hidden;margin-bottom:6px;padding:7% 8%}
   .step .mob-shot img{display:block;height:100%;width:auto;max-width:100%;min-width:0;object-fit:contain;mix-blend-mode:multiply}
-  .shade-grid,.cc-grid,.skin-grid,.statement-grid{grid-template-columns:minmax(0,1fr)}
+  .shade-grid,.cc-grid,.skin-grid,.statement-grid,.shades .sec-head{grid-template-columns:minmax(0,1fr)}
   .std-grid{grid-template-columns:minmax(0,1fr);justify-items:start}
   .edit-foot{grid-template-columns:minmax(0,1fr)}
   .specbar{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -464,7 +484,7 @@ footer nav a:hover{color:var(--paper)}
 .kit ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-l)}
 .kit li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line-l);font-size:14.5px}
 .kit li em{font-style:normal;color:var(--mute-l);font-size:13px;text-align:right}
-.kit .buyrow{margin-top:auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;padding-top:8px}
+.kit .buyrow{margin-top:auto;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding-top:8px}
 .kit .prices{display:grid;gap:2px}
 .kit .mrp{color:var(--mute-l);font-size:14px}
 .kit .mrp s{text-decoration-thickness:1px}
@@ -506,7 +526,15 @@ footer nav a:hover{color:var(--paper)}
   .join .wrap{grid-template-columns:minmax(0,1fr)}
   .hero-meta{display:none}
 }
-@media (max-width:640px){.kit-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  .kit-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(var(--gutter) * -1);padding:4px var(--gutter) 8px;scroll-padding-inline:var(--gutter);scrollbar-width:none;overscroll-behavior-x:contain}
+  .kit-grid::-webkit-scrollbar{display:none}
+  .kit-grid>.kit{flex:0 0 86%;scroll-snap-align:center;scroll-snap-stop:always}
+  .kit-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+  .kit-dots button{width:28px;height:28px;display:grid;place-items:center}
+  .kit-dots button::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--line-l);transition:width .4s var(--ease),background .4s,border-radius .4s}
+  .kit-dots button[aria-current="true"]::before{width:22px;border-radius:4px;background:var(--ink)}
+}
 </style>
 </head>
 <body>
@@ -603,7 +631,7 @@ footer nav a:hover{color:var(--paper)}
           <div class="stage" id="stage">
             <div class="count label"><span id="stepNo">Step 01 / 08</span><span id="stepName">Prep</span></div>
             <div class="prog"><i id="prog"></i></div>
-            <div class="set on"><span class="ghost">Prep</span><img src="img/moist-back.webp" alt="" style="width:44%;left:44%;top:16%"><img src="img/moist.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Protect</span><img src="img/sun-back.webp" alt="" style="width:44%;left:46%;top:16%"><img src="img/sun.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Prime</span><img src="img/primer-back.webp" alt="" style="width:46%;left:48%;top:18%"><img src="img/primer.webp" alt="" style="width:64%;left:6%;top:10%"></div><div class="set"><span class="ghost">Correct</span><img src="img/cc-angle.webp" alt="" style="width:80%;left:10%;top:16%"></div><div class="set"><span class="ghost">Conceal</span><img src="img/conc-trio.webp" alt="" style="width:78%;left:11%;top:12%"></div><div class="set"><span class="ghost">Build</span><img src="img/pb-cocoa.webp" alt="" style="width:46%;left:50%;top:18%"><img src="img/f-c2w1.webp" alt="" style="width:60%;left:6%;top:12%"></div><div class="set"><span class="ghost">Control</span><img src="img/powder-top.webp" alt="" style="width:40%;left:57%;top:12%"><img src="img/powder.webp" alt="" style="width:56%;left:4%;top:26%"></div><div class="set"><span class="ghost">Set</span><img src="img/spray-back.webp" alt="" style="width:62%;left:38%;top:12%"><img src="img/spray.webp" alt="" style="width:74%;left:6%;top:8%"></div>
+            <div class="set on"><span class="ghost">Prep</span><img src="img/moist-back.webp" alt="" style="width:44%;left:44%;top:16%"><img src="img/moist.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Protect</span><img src="img/sun-back.webp" alt="" style="width:44%;left:46%;top:16%"><img src="img/sun.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Prime</span><img src="img/primer-back.webp" alt="" style="width:46%;left:48%;top:18%"><img src="img/primer.webp" alt="" style="width:64%;left:6%;top:10%"></div><div class="set"><span class="ghost">Correct</span><img src="img/cc-angle.webp" alt="" style="width:58%;left:21%;top:7%"></div><div class="set"><span class="ghost">Conceal</span><img src="img/conc-trio.webp" alt="" style="width:60%;left:20%;top:7%"></div><div class="set"><span class="ghost">Build</span><img src="img/pb-cocoa.webp" alt="" style="width:46%;left:50%;top:18%"><img src="img/f-c2w1.webp" alt="" style="width:60%;left:6%;top:12%"></div><div class="set"><span class="ghost">Control</span><img src="img/powder-top.webp" alt="" style="width:40%;left:57%;top:12%"><img src="img/powder.webp" alt="" style="width:52%;left:4%;top:24%"></div><div class="set"><span class="ghost">Set</span><img src="img/spray-back.webp" alt="" style="width:62%;left:38%;top:12%"><img src="img/spray.webp" alt="" style="width:74%;left:6%;top:8%"></div>
           </div>
         </div>
         <div class="steps">
@@ -714,7 +742,7 @@ footer nav a:hover{color:var(--paper)}
           <div class="shot" aria-hidden="true"><span class="letter">B</span><span class="off">15%<small>OFF</small></span><div class="row"><img src="img/k/moist.webp" alt="" style="--h:48"><img src="img/k/sun.webp" alt="" style="--h:48"><img src="img/k/powder.webp" alt="" style="--h:26.9"></div></div>
           <div class="body">
             <div class="tags"><span>For men</span><span>Matte finish</span><span>No makeup look</span></div>
-            <h3>Men</h3>
+            <h3>Daily Essentials</h3>
             <p class="desc">Skincare and oil control without the makeup counter feel. Clean, matte, done.</p>
             <ul aria-label="What's inside"><li><span>1 × Moisturiser</span><em>100 g</em></li><li><span>1 × Sunscreen SPF 50</span><em>100 g</em></li><li><span>1 × Anti-Shine Powder</span><em>shade selected at checkout</em></li></ul>
             <div class="buyrow"><div class="prices"><span class="tiernote">No foundation in this kit</span><span class="mrp">MRP <s>₹3,095</s> · 15% off</span><span class="now">₹2,631</span></div><a class="cart mag" data-buy="KIT-MEN" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a></div>
@@ -724,7 +752,7 @@ footer nav a:hover{color:var(--paper)}
           <div class="shot" aria-hidden="true"><span class="letter">C</span><span class="off">15%<small>OFF</small></span><div class="row"><img src="img/k/moist.webp" alt="" style="--h:48"><img src="img/k/sun.webp" alt="" style="--h:48"><img class="kit-f" data-pb="img/k/pb-cocoa.webp" data-pg="img/k/f-c2w1.webp" src="img/k/pb-cocoa.webp" alt="" style="--h:35.5"></div></div>
           <div class="body">
             <div class="tags"><span>For men</span><span>Natural coverage</span><span>Everyday wear</span></div>
-            <h3>Men (Coverage)</h3>
+            <h3>Daily Coverage</h3>
             <p class="desc">Everything from skincare to coverage. Natural finish no one knows, and that&#x27;s the point.</p>
             <ul aria-label="What's inside"><li><span>1 × Moisturiser</span><em>100 g</em></li><li><span>1 × Sunscreen SPF 50</span><em>100 g</em></li><li><span>1 × Liquid Foundation</span><em>shade selected at checkout</em></li></ul>
             <div class="buyrow"><div class="prices" data-tiered><span class="tiernote">With <span class="tn">Professional Base</span> foundation</span><span class="mrp">MRP <s class="m" data-pb="₹3,500" data-pg="₹4,100">₹3,500</s> · 15% off</span><span class="now" data-pb="₹2,975" data-pg="₹3,485">₹2,975</span></div><a class="cart mag" data-buy="KIT-MENCOV" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a></div>
@@ -1265,6 +1293,94 @@ var SHADES={
   });
 
   window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+
+/* ===== Touch & motion layer (spring press, peek-on-scroll, swipe) ===== */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touch=matchMedia('(hover: none)').matches;
+  var G=window.gsap;
+
+  /* Kit products rise in with a stagger when each card enters view */
+  if(G&&window.ScrollTrigger&&!reduce){
+    document.querySelectorAll('.kit .shot').forEach(function(shot){
+      G.from(shot.querySelectorAll('img'),{y:40,opacity:0,duration:.9,stagger:.08,ease:'back.out(1.6)',clearProps:'transform,opacity',
+        scrollTrigger:{trigger:shot,start:'top 85%',once:true}});
+    });
+    /* phone: step product shots drift up and settle as they scroll through */
+    if(matchMedia('(max-width:900px)').matches){
+      document.querySelectorAll('.step .mob-shot').forEach(function(m){
+        G.fromTo(m.querySelectorAll('img'),{yPercent:8,scale:.94},{yPercent:-4,scale:1,ease:'none',
+          scrollTrigger:{trigger:m,start:'top bottom',end:'bottom 30%',scrub:.6}});
+      });
+    }
+  }
+
+  if(!touch)return;
+
+  /* Spring press feedback on touch */
+  var pressSel='.btn,.cart,.card,.kit,.sw,.tabs button,.seg button,.cc-list button,.menu-btn,.kit-dots button';
+  function down(el){if(reduce||!G)return;G.to(el,{scale:el.matches('.card,.kit')?.975:.94,duration:.14,ease:'power2.out',overwrite:'auto'})}
+  function up(el){if(reduce||!G)return;G.to(el,{scale:1,duration:.8,ease:'elastic.out(1,.4)',overwrite:'auto'})}
+  document.addEventListener('pointerdown',function(e){
+    if(e.pointerType==='mouse')return;
+    var el=e.target.closest(pressSel);if(!el)return;
+    down(el);
+    var done=function(){up(el);window.removeEventListener('pointerup',done);window.removeEventListener('pointercancel',done)};
+    window.addEventListener('pointerup',done);window.addEventListener('pointercancel',done);
+    if(el.matches('.cart,[data-buy]')&&navigator.vibrate)try{navigator.vibrate(8)}catch(_){}
+  },{passive:true});
+
+  /* Hover states play automatically when a card reaches the middle of the screen */
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      e.target.classList.toggle(e.target.classList.contains('kit')?'lift':'peek',e.isIntersecting);
+    })},{rootMargin:'-38% 0px -38% 0px'});
+    document.querySelectorAll('.card,.kit').forEach(function(c){io.observe(c)});
+  }
+
+  /* Kit carousel dots (phones) */
+  var grid=document.querySelector('.kit-grid');
+  if(grid){
+    var kits=grid.querySelectorAll('.kit'),dots=document.createElement('div');
+    dots.className='kit-dots';dots.setAttribute('role','group');dots.setAttribute('aria-label','Choose kit');
+    kits.forEach(function(k,i){
+      var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Kit '+(i+1)+' of '+kits.length);
+      b.addEventListener('click',function(){grid.scrollTo({left:k.offsetLeft-grid.offsetLeft-(grid.clientWidth-k.offsetWidth)/2,behavior:reduce?'auto':'smooth'})});
+      dots.appendChild(b);
+    });
+    grid.after(dots);
+    var mark=function(){
+      var mid=grid.scrollLeft+grid.clientWidth/2,best=0,bd=1e9;
+      kits.forEach(function(k,i){var c=k.offsetLeft-grid.offsetLeft+k.offsetWidth/2,d=Math.abs(c-mid);if(d<bd){bd=d;best=i}});
+      dots.querySelectorAll('button').forEach(function(b,i){b.setAttribute('aria-current',String(i===best))});
+    };
+    grid.addEventListener('scroll',function(){requestAnimationFrame(mark)},{passive:true});mark();
+  }
+
+  /* Swipe the shade plate left/right to change shade */
+  var plate=document.querySelector('.plate'),img=document.getElementById('plateImg');
+  if(plate&&img){
+    var hint=document.createElement('span');hint.className='swipe-hint label';hint.textContent='← Swipe for more shades →';plate.after(hint);
+    var x0=null,y0=0,dx=0,locked=null;
+    plate.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse')return;x0=e.clientX;y0=e.clientY;dx=0;locked=null});
+    plate.addEventListener('pointermove',function(e){
+      if(x0===null)return;dx=e.clientX-x0;var dy=e.clientY-y0;
+      if(locked===null&&(Math.abs(dx)>8||Math.abs(dy)>8))locked=Math.abs(dx)>Math.abs(dy);
+      if(locked&&G&&!reduce)G.set(img,{x:dx*.5,rotation:dx*.02});
+    });
+    var end=function(){
+      if(x0===null)return;x0=null;
+      if(locked&&Math.abs(dx)>50){
+        var sws=document.querySelectorAll('#swatches .sw'),cur=0;
+        sws.forEach(function(b,i){if(b.getAttribute('aria-pressed')==='true')cur=i});
+        var nx=(cur+(dx<0?1:-1)+sws.length)%sws.length;
+        if(G)G.set(img,{x:0,rotation:0});
+        sws[nx].click();hint.classList.add('gone');
+      }else if(G){G.to(img,{x:0,rotation:0,duration:.7,ease:'elastic.out(1,.45)'})}
+    };
+    plate.addEventListener('pointerup',end);plate.addEventListener('pointercancel',end);
+  }
 })();
 
 /* ===== v3: kits tier toggle + email list ===== */
