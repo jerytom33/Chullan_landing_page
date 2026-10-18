@@ -71,7 +71,6 @@ p{margin:0}
 .logo svg.frame{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .logo svg.frame rect{fill:none;stroke:currentColor;stroke-width:1.2;stroke-dasharray:100;stroke-dashoffset:0}
 .logo .word{font-size:19px;font-weight:500;letter-spacing:.08em;position:relative}
-.logo .word sup{font-size:7px;position:absolute;top:-1px;right:-9px}
 .logo .tag{font-size:6.5px;font-weight:500;letter-spacing:.32em;white-space:nowrap}
 
 /* ---------- Header + announcement ---------- */
@@ -181,12 +180,12 @@ p{margin:0}
 .process a.on{color:var(--ink);border-top-color:var(--ink)}
 .routine-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
 .stage-wrap{position:sticky;top:calc(env(safe-area-inset-top,0px) + 120px);height:min(72vh,700px)}
-.stage{position:relative;height:100%;background:var(--stone);overflow:hidden}
+.stage{position:relative;height:100%;background:var(--stone);overflow:hidden;container-type:inline-size}
 .stage .set{position:absolute;inset:0;background:var(--stone);opacity:0;visibility:hidden;transition:opacity .8s var(--ease),visibility .8s}
 .stage .set.on{opacity:1;visibility:visible}
 .stage .set img{position:absolute;mix-blend-mode:multiply;transition:transform 1.1s var(--ease)}
 .stage .set:not(.on) img{transform:translateY(6%) scale(.96)}
-.stage .ghost{position:absolute;left:-.04em;bottom:-.14em;font-family:var(--f-display);font-weight:700;font-size:clamp(110px,13vw,230px);line-height:.8;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(14,13,12,.22);pointer-events:none;white-space:nowrap}
+.stage .ghost{position:absolute;left:-.04em;bottom:-.14em;font-family:var(--f-display);font-weight:700;font-size:min(clamp(110px,13vw,230px),24cqw);line-height:.8;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(14,13,12,.22);pointer-events:none;white-space:nowrap}
 .stage .count{position:absolute;top:22px;left:24px;right:24px;display:flex;justify-content:space-between;color:var(--ink);z-index:2}
 .stage .prog{position:absolute;left:24px;right:24px;top:52px;height:2px;background:rgba(14,13,12,.12);z-index:2}
 .stage .prog i{position:absolute;inset:0;background:var(--ink);transform-origin:left;transform:scaleX(.125);transition:transform .8s var(--ease)}
@@ -213,8 +212,9 @@ p{margin:0}
 .statement-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);margin-top:clamp(32px,4vw,56px);align-items:end}
 .statement-grid p{color:#cfcac3;font-size:var(--fs-lead);line-height:1.5;max-width:46ch}
 .statement-grid p+p{margin-top:16px;color:var(--mute-d);font-size:var(--fs-body)}
-.lineup{margin-top:clamp(56px,7vw,100px);background:var(--paper);position:relative;overflow:hidden}
-.lineup img{width:100%;mix-blend-mode:multiply}
+.lineup{margin-top:clamp(56px,7vw,100px);background:#fff;position:relative;overflow:hidden}
+.lineup .lineup-ph{position:relative;overflow:hidden;margin:clamp(14px,2vw,24px) 0;background:#fff}
+.lineup .lineup-ph img{display:block;width:100%;height:auto;transform-origin:50% 60%}
 .lineup figcaption{padding:clamp(18px,3vw,36px) clamp(18px,3vw,36px) 0;color:var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px}
 .lineup figcaption b{font-family:var(--f-display);font-size:clamp(24px,3vw,44px);text-transform:uppercase;font-weight:600;line-height:1}
 .lineup figcaption span{color:var(--mute-l)}
@@ -226,7 +226,7 @@ p{margin:0}
 .shades{padding-block:clamp(96px,12vw,170px)}
 .shade-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
 .plate{position:relative;aspect-ratio:1/1;background:var(--paper);overflow:hidden}
-.plate img{position:absolute;left:6%;top:10%;width:88%;height:82%;object-fit:contain;mix-blend-mode:multiply}
+.plate img{position:absolute;left:6%;top:13%;width:88%;height:66%;object-fit:contain;mix-blend-mode:multiply}
 .plate .tagline{position:absolute;left:22px;bottom:18px;right:22px;color:var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:16px;z-index:2}
 .plate .tagline b{font-family:var(--f-display);font-size:clamp(34px,4.4vw,64px);font-weight:600;line-height:1;letter-spacing:.01em;text-transform:uppercase}
 .plate .tagline span{color:var(--mute-l)}
@@ -390,8 +390,8 @@ footer nav a:hover{color:var(--paper)}
   .stage-wrap{display:none}
   .process{display:none}
   .step{min-height:0;padding-block:40px}
-  .step .mob-shot{display:block;position:relative;aspect-ratio:4/3;background:var(--paper);overflow:hidden;margin-bottom:6px}
-  .step .mob-shot img{position:absolute;mix-blend-mode:multiply}
+  .step .mob-shot{display:flex;align-items:flex-end;justify-content:center;gap:5%;position:relative;aspect-ratio:4/3;background:var(--paper);overflow:hidden;margin-bottom:6px;padding:7% 8%}
+  .step .mob-shot img{display:block;height:100%;width:auto;max-width:100%;min-width:0;object-fit:contain;mix-blend-mode:multiply}
   .shade-grid,.cc-grid,.skin-grid,.statement-grid{grid-template-columns:minmax(0,1fr)}
   .std-grid{grid-template-columns:minmax(0,1fr);justify-items:start}
   .edit-foot{grid-template-columns:minmax(0,1fr)}
@@ -406,7 +406,9 @@ footer nav a:hover{color:var(--paper)}
   .hero-ctas .btn{flex:1;justify-content:center}
   .specbar{grid-template-columns:minmax(0,1fr)}
   .specbar>div{padding:12px 0;grid-template-columns:auto 1fr;align-items:baseline;gap:14px;border-bottom:1px solid var(--line-d)}
-  .tiers-legend{flex-direction:column;gap:6px}
+  .tiers-legend{flex-direction:column;gap:8px;letter-spacing:.12em}
+  .tiers-legend span{align-items:baseline}
+  .tiers-legend span::before{flex:none;width:18px;transform:translateY(-.3em)}
   .sw{min-width:52px}
   .sw .dot{width:46px;height:46px}
 }
@@ -446,9 +448,11 @@ footer nav a:hover{color:var(--paper)}
 .kit-toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .kit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,26px)}
 .kit{display:flex;flex-direction:column;background:var(--paper);position:relative}
-.kit .shot{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--paper);border-bottom:1px solid var(--line-l)}
-.kit .shot img{position:absolute;bottom:4%;mix-blend-mode:multiply;transition:transform .8s var(--ease)}
-.kit:hover .shot img{transform:translateX(calc(var(--fan,0) * 1%)) rotate(calc(var(--fan,0) * .6deg))}
+.kit .shot{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--paper);border-bottom:1px solid var(--line-l);container-type:inline-size}
+.kit .shot .row{position:absolute;left:0;right:0;bottom:7%;display:flex;justify-content:center;align-items:flex-end;gap:2cqw}
+.kit .shot img{flex:none;height:calc(var(--h) * 1cqw);width:auto;mix-blend-mode:multiply;transition:transform .8s var(--ease)}
+.kit:hover .shot img{transform:translateY(-3%)}
+.kit:hover .shot img:nth-child(2n){transition-delay:.06s}
 .kit .off{position:absolute;top:14px;right:14px;z-index:2;width:62px;height:62px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;text-align:center;font-family:var(--f-display);font-weight:600;font-size:18px;line-height:.9}
 .kit .off small{display:block;font-family:var(--f-logo);font-size:8.5px;letter-spacing:.18em;font-weight:500}
 .kit .letter{position:absolute;left:16px;top:12px;z-index:2;font-family:var(--f-display);font-weight:700;font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(14,13,12,.28)}
@@ -527,7 +531,7 @@ footer nav a:hover{color:var(--paper)}
       </nav>
       <a class="logo" href="#top" aria-label="Chullan home">
         <svg class="frame" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100" vector-effect="non-scaling-stroke"/></svg>
-        <span class="word">CHULLAN<sup>®</sup></span>
+        <span class="word">CHULLAN</span>
         <span class="tag">★★★ MAKE UP ★★★</span>
         <span class="tag">PROFESSIONAL</span>
       </a>
@@ -599,12 +603,12 @@ footer nav a:hover{color:var(--paper)}
           <div class="stage" id="stage">
             <div class="count label"><span id="stepNo">Step 01 / 08</span><span id="stepName">Prep</span></div>
             <div class="prog"><i id="prog"></i></div>
-            <div class="set on"><span class="ghost">Prep</span><img src="img/moist-back.webp" alt="" style="width:44%;left:44%;top:16%"><img src="img/moist.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Protect</span><img src="img/sun-back.webp" alt="" style="width:44%;left:46%;top:16%"><img src="img/sun.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Prime</span><img src="img/primer-back.webp" alt="" style="width:46%;left:48%;top:18%"><img src="img/primer.webp" alt="" style="width:64%;left:6%;top:10%"></div><div class="set"><span class="ghost">Correct</span><img src="img/cc-angle.webp" alt="" style="width:80%;left:10%;top:16%"></div><div class="set"><span class="ghost">Conceal</span><img src="img/conc-trio.webp" alt="" style="width:78%;left:11%;top:12%"></div><div class="set"><span class="ghost">Build</span><img src="img/pb-cocoa.webp" alt="" style="width:46%;left:50%;top:18%"><img src="img/f-c2w1.webp" alt="" style="width:60%;left:6%;top:12%"></div><div class="set"><span class="ghost">Control</span><img src="img/powder-top.webp" alt="" style="width:40%;left:56%;top:10%"><img src="img/powder.webp" alt="" style="width:70%;left:8%;top:22%"></div><div class="set"><span class="ghost">Set</span><img src="img/spray-back.webp" alt="" style="width:62%;left:38%;top:12%"><img src="img/spray.webp" alt="" style="width:74%;left:6%;top:8%"></div>
+            <div class="set on"><span class="ghost">Prep</span><img src="img/moist-back.webp" alt="" style="width:44%;left:44%;top:16%"><img src="img/moist.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Protect</span><img src="img/sun-back.webp" alt="" style="width:44%;left:46%;top:16%"><img src="img/sun.webp" alt="" style="width:62%;left:8%;top:12%"></div><div class="set"><span class="ghost">Prime</span><img src="img/primer-back.webp" alt="" style="width:46%;left:48%;top:18%"><img src="img/primer.webp" alt="" style="width:64%;left:6%;top:10%"></div><div class="set"><span class="ghost">Correct</span><img src="img/cc-angle.webp" alt="" style="width:80%;left:10%;top:16%"></div><div class="set"><span class="ghost">Conceal</span><img src="img/conc-trio.webp" alt="" style="width:78%;left:11%;top:12%"></div><div class="set"><span class="ghost">Build</span><img src="img/pb-cocoa.webp" alt="" style="width:46%;left:50%;top:18%"><img src="img/f-c2w1.webp" alt="" style="width:60%;left:6%;top:12%"></div><div class="set"><span class="ghost">Control</span><img src="img/powder-top.webp" alt="" style="width:40%;left:57%;top:12%"><img src="img/powder.webp" alt="" style="width:56%;left:4%;top:26%"></div><div class="set"><span class="ghost">Set</span><img src="img/spray-back.webp" alt="" style="width:62%;left:38%;top:12%"><img src="img/spray.webp" alt="" style="width:74%;left:6%;top:8%"></div>
           </div>
         </div>
         <div class="steps">
           <article class="step" id="step-0">
-            <div class="mob-shot" aria-hidden="true"><img src="img/moist.webp" alt="" style="width:66%;left:17%;top:-4%"></div>
+            <div class="mob-shot" aria-hidden="true"><img src="img/moist.webp" alt=""></div>
             <p class="num label">Step 01</p>
             <h3>Prep</h3>
             <div class="prod"><b>Moisturiser</b><span class="price">₹1,100</span></div>
@@ -613,7 +617,7 @@ footer nav a:hover{color:var(--paper)}
             <a class="cart mag" data-buy="MOIST" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
           </article>
           <article class="step" id="step-1">
-            <div class="mob-shot" aria-hidden="true"><img src="img/sun.webp" alt="" style="width:66%;left:17%;top:-4%"></div>
+            <div class="mob-shot" aria-hidden="true"><img src="img/sun.webp" alt=""></div>
             <p class="num label">Step 02</p>
             <h3>Protect</h3>
             <div class="prod"><b>Sunscreen SPF 50</b><span class="price">₹1,200</span></div>
@@ -622,7 +626,7 @@ footer nav a:hover{color:var(--paper)}
             <a class="cart mag" data-buy="SUN50" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
           </article>
           <article class="step" id="step-2">
-            <div class="mob-shot" aria-hidden="true"><img src="img/primer.webp" alt="" style="width:66%;left:17%;top:-4%"></div>
+            <div class="mob-shot" aria-hidden="true"><img src="img/primer.webp" alt=""></div>
             <p class="num label">Step 03</p>
             <h3>Prime</h3>
             <div class="prod"><b>Hydrating Primer</b><span class="price">₹1,500</span></div>
@@ -631,7 +635,7 @@ footer nav a:hover{color:var(--paper)}
             <a class="cart mag" data-buy="PRIMER" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
           </article>
           <article class="step" id="step-3">
-            <div class="mob-shot" aria-hidden="true"><img src="img/cc-angle.webp" alt="" style="width:76%;left:12%;top:2%"></div>
+            <div class="mob-shot" aria-hidden="true"><img src="img/cc-angle.webp" alt=""></div>
             <p class="num label">Step 04</p>
             <h3>Correct</h3>
             <div class="prod"><b>Colour Corrector Palette</b><span class="price">₹1,950</span></div>
@@ -640,7 +644,7 @@ footer nav a:hover{color:var(--paper)}
             <a class="cart mag" data-buy="CORR" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
           </article>
           <article class="step" id="step-4">
-            <div class="mob-shot" aria-hidden="true"><img src="img/conc-trio.webp" alt="" style="width:76%;left:12%;top:0%"></div>
+            <div class="mob-shot" aria-hidden="true"><img src="img/conc-trio.webp" alt=""></div>
             <p class="num label">Step 05</p>
             <h3>Conceal</h3>
             <div class="prod"><b>Concealer</b><span class="price">₹1,200</span></div>
@@ -649,7 +653,7 @@ footer nav a:hover{color:var(--paper)}
             <a class="cart mag" data-buy="CONC" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
           </article>
           <article class="step" id="step-5">
-            <div class="mob-shot" aria-hidden="true"><img src="img/pb-cocoa.webp" alt="" style="width:48%;left:48%;top:4%"><img src="img/f-c2w1.webp" alt="" style="width:60%;left:4%;top:0%"></div>
+            <div class="mob-shot" aria-hidden="true"><img src="img/k/f-c2w1.webp" alt=""><img src="img/k/pb-cocoa.webp" alt="" style="height:90%"></div>
             <p class="num label">Step 06</p>
             <h3>Build</h3>
             <div class="prod"><b>Liquid Foundation</b><span class="price">From ₹1,200</span></div>
@@ -658,7 +662,7 @@ footer nav a:hover{color:var(--paper)}
             <a class="cart mag" data-buy="FND" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
           </article>
           <article class="step" id="step-6">
-            <div class="mob-shot" aria-hidden="true"><img src="img/powder.webp" alt="" style="width:66%;left:17%;top:-2%"></div>
+            <div class="mob-shot" aria-hidden="true"><img src="img/powder.webp" alt=""></div>
             <p class="num label">Step 07</p>
             <h3>Control</h3>
             <div class="prod"><b>Anti-Shine Powder</b><span class="price">₹795</span></div>
@@ -667,7 +671,7 @@ footer nav a:hover{color:var(--paper)}
             <a class="cart mag" data-buy="PWD" href="https://chullan.aistore.bz/" target="_blank" rel="noopener" data-cursor="Shop">Add to cart <span class="arr">→</span></a>
           </article>
           <article class="step" id="step-7">
-            <div class="mob-shot" aria-hidden="true"><img src="img/spray.webp" alt="" style="width:70%;left:15%;top:-4%"></div>
+            <div class="mob-shot" aria-hidden="true"><img src="img/spray.webp" alt=""></div>
             <p class="num label">Step 08</p>
             <h3>Set</h3>
             <div class="prod"><b>Setting Spray</b><span class="price">₹1,200</span></div>
@@ -697,7 +701,7 @@ footer nav a:hover{color:var(--paper)}
       </div>
       <div class="kit-grid">
         <article class="kit" data-reveal>
-          <div class="shot" aria-hidden="true"><span class="letter">A</span><span class="off">10%<small>OFF</small></span><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:52%;left:0.0%;z-index:9;--fan:-1.5"><img src="img/powder.webp" alt="" style="width:52%;left:48.0%;z-index:10;--fan:1.5"></div>
+          <div class="shot" aria-hidden="true"><span class="letter">A</span><span class="off">10%<small>OFF</small></span><div class="row"><img class="kit-f" data-pb="img/k/pb-cocoa.webp" data-pg="img/k/f-c2w1.webp" src="img/k/pb-cocoa.webp" alt="" style="--h:35.5"><img src="img/k/powder.webp" alt="" style="--h:26.9"></div></div>
           <div class="body">
             <div class="tags"><span>Quick routine</span><span>2-step base</span></div>
             <h3>Quick Makeup</h3>
@@ -707,7 +711,7 @@ footer nav a:hover{color:var(--paper)}
           </div>
         </article>
         <article class="kit" data-reveal>
-          <div class="shot" aria-hidden="true"><span class="letter">B</span><span class="off">15%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:44%;left:0.0%;z-index:9;--fan:-3.0"><img src="img/sun.webp" alt="" style="width:44%;left:28.0%;z-index:10;--fan:0.0"><img src="img/powder.webp" alt="" style="width:44%;left:56.0%;z-index:9;--fan:3.0"></div>
+          <div class="shot" aria-hidden="true"><span class="letter">B</span><span class="off">15%<small>OFF</small></span><div class="row"><img src="img/k/moist.webp" alt="" style="--h:48"><img src="img/k/sun.webp" alt="" style="--h:48"><img src="img/k/powder.webp" alt="" style="--h:26.9"></div></div>
           <div class="body">
             <div class="tags"><span>For men</span><span>Matte finish</span><span>No makeup look</span></div>
             <h3>Men</h3>
@@ -717,7 +721,7 @@ footer nav a:hover{color:var(--paper)}
           </div>
         </article>
         <article class="kit" data-reveal>
-          <div class="shot" aria-hidden="true"><span class="letter">C</span><span class="off">15%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:44%;left:0.0%;z-index:9;--fan:-3.0"><img src="img/sun.webp" alt="" style="width:44%;left:28.0%;z-index:10;--fan:0.0"><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:44%;left:56.0%;z-index:9;--fan:3.0"></div>
+          <div class="shot" aria-hidden="true"><span class="letter">C</span><span class="off">15%<small>OFF</small></span><div class="row"><img src="img/k/moist.webp" alt="" style="--h:48"><img src="img/k/sun.webp" alt="" style="--h:48"><img class="kit-f" data-pb="img/k/pb-cocoa.webp" data-pg="img/k/f-c2w1.webp" src="img/k/pb-cocoa.webp" alt="" style="--h:35.5"></div></div>
           <div class="body">
             <div class="tags"><span>For men</span><span>Natural coverage</span><span>Everyday wear</span></div>
             <h3>Men (Coverage)</h3>
@@ -727,7 +731,7 @@ footer nav a:hover{color:var(--paper)}
           </div>
         </article>
         <article class="kit" data-reveal>
-          <div class="shot" aria-hidden="true"><span class="letter">D</span><span class="off">15%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:38%;left:0.0%;z-index:8;--fan:-4.5"><img src="img/sun.webp" alt="" style="width:38%;left:20.7%;z-index:9;--fan:-1.5"><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:38%;left:41.3%;z-index:10;--fan:1.5"><img src="img/powder.webp" alt="" style="width:38%;left:62.0%;z-index:9;--fan:4.5"></div>
+          <div class="shot" aria-hidden="true"><span class="letter">D</span><span class="off">15%<small>OFF</small></span><div class="row"><img src="img/k/moist.webp" alt="" style="--h:39"><img src="img/k/sun.webp" alt="" style="--h:39"><img class="kit-f" data-pb="img/k/pb-cocoa.webp" data-pg="img/k/f-c2w1.webp" src="img/k/pb-cocoa.webp" alt="" style="--h:28.8"><img src="img/k/powder.webp" alt="" style="--h:21.8"></div></div>
           <div class="body">
             <div class="tags"><span>Daily wear</span><span>All-day oil control</span><span>College & work</span></div>
             <h3>Campus Kit (9-5)</h3>
@@ -737,7 +741,7 @@ footer nav a:hover{color:var(--paper)}
           </div>
         </article>
         <article class="kit" data-reveal>
-          <div class="shot" aria-hidden="true"><span class="letter">E</span><span class="off">15%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:38%;left:0.0%;z-index:8;--fan:-4.5"><img src="img/sun.webp" alt="" style="width:38%;left:20.7%;z-index:9;--fan:-1.5"><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:38%;left:41.3%;z-index:10;--fan:1.5"><img src="img/spray.webp" alt="" style="width:38%;left:62.0%;z-index:9;--fan:4.5"></div>
+          <div class="shot" aria-hidden="true"><span class="letter">E</span><span class="off">15%<small>OFF</small></span><div class="row"><img src="img/k/moist.webp" alt="" style="--h:45.4"><img src="img/k/sun.webp" alt="" style="--h:45.4"><img class="kit-f" data-pb="img/k/pb-cocoa.webp" data-pg="img/k/f-c2w1.webp" src="img/k/pb-cocoa.webp" alt="" style="--h:33.6"><img src="img/k/spray.webp" alt="" style="--h:43.6"></div></div>
           <div class="body">
             <div class="tags"><span>Best for beginners</span><span>Complete routine</span><span>First-time buyers</span></div>
             <h3>Everyday Beginner</h3>
@@ -747,7 +751,7 @@ footer nav a:hover{color:var(--paper)}
           </div>
         </article>
         <article class="kit" data-reveal>
-          <div class="shot" aria-hidden="true"><span class="letter">F</span><span class="off">20%<small>OFF</small></span><img src="img/moist.webp" alt="" style="width:34%;left:0.0%;z-index:8;--fan:-6.0"><img src="img/sun.webp" alt="" style="width:34%;left:16.5%;z-index:9;--fan:-3.0"><img class="kit-f" data-pb="img/pb-cocoa.webp" data-pg="img/f-c2w1.webp" src="img/pb-cocoa.webp" alt="" style="width:34%;left:33.0%;z-index:10;--fan:0.0"><img src="img/cc-angle.webp" alt="" style="width:34%;left:49.5%;z-index:9;--fan:3.0"><img src="img/spray.webp" alt="" style="width:34%;left:66.0%;z-index:8;--fan:6.0"></div>
+          <div class="shot" aria-hidden="true"><span class="letter">F</span><span class="off">20%<small>OFF</small></span><div class="row"><img src="img/k/moist.webp" alt="" style="--h:33.2"><img src="img/k/sun.webp" alt="" style="--h:33.2"><img class="kit-f" data-pb="img/k/pb-cocoa.webp" data-pg="img/k/f-c2w1.webp" src="img/k/pb-cocoa.webp" alt="" style="--h:24.6"><img src="img/k/cc-angle.webp" alt="" style="--h:18.6"><img src="img/k/spray.webp" alt="" style="--h:31.9"></div></div>
           <div class="body">
             <div class="tags"><span>For pros</span><span>Event-ready</span><span>Full coverage</span><span>Bridal & party</span></div>
             <h3>Professional (Event)</h3>
@@ -773,7 +777,7 @@ footer nav a:hover{color:var(--paper)}
       </div>
       <figure class="lineup" data-reveal>
         <figcaption><b>Fair neutral to deep warm</b><span class="label">8 foundation shades</span></figcaption>
-        <img src="img/lineup.webp" width="1440" height="668" alt="All eight Chullan foundation shades in a row, from the five light Pro Glow bottles to the three deep Professional Base bottles" loading="lazy">
+        <div class="lineup-ph"><img src="img/lineup.webp" width="1440" height="668" alt="All eight Chullan foundation shades in a row, from the five light Pro Glow bottles to the three deep Professional Base bottles" loading="lazy"></div>
         <div class="tiers-legend label"><span>Pro Glow · 5 shades · ₹1,800</span><span>Professional Base · 3 shades · ₹1,200</span></div>
       </figure>
     </div>
@@ -954,7 +958,7 @@ footer nav a:hover{color:var(--paper)}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Back to top">
       <svg class="frame" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="100%" height="100%" pathLength="100" vector-effect="non-scaling-stroke"/></svg>
-      <span class="word">CHULLAN<sup>®</sup></span>
+      <span class="word">CHULLAN</span>
       <span class="tag">★★★ MAKE UP ★★★</span>
       <span class="tag">PROFESSIONAL</span>
     </a>
@@ -1241,7 +1245,7 @@ var SHADES={
 
     gsap.to('#skinPhoto img',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'#skinPhoto',start:'top bottom',end:'bottom top',scrub:true}});
     gsap.from('#skinPhoto',{clipPath:'inset(18% 0 18% 0)',duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'#skinPhoto',start:'top 80%',once:true}});
-    gsap.fromTo('.lineup img',{scale:1.08,xPercent:-2},{scale:1,xPercent:2,ease:'none',scrollTrigger:{trigger:'.lineup',start:'top bottom',end:'bottom top',scrub:true}});
+    gsap.fromTo('.lineup-ph img',{scale:1.06,xPercent:-1.5},{scale:1.06,xPercent:1.5,ease:'none',scrollTrigger:{trigger:'.lineup',start:'top bottom',end:'bottom top',scrub:true}});
   }
 
   if(reduce){words.forEach(function(w){w.style.color='inherit'})}
